@@ -19,9 +19,16 @@ def createMaze(matrix):
             mazeRow.append(matrix[n])
 
         maze.append(mazeRow)
-
     return maze
 
+def createMap():
+    map = {}
+    for i in range(100):
+        if i < 10:
+            map.update({'0'+ str(i): 'F'})
+        else:
+            map.update({str(i): 'F'})
+    return map
 
 def readInFile(file):
     maze = []
@@ -29,6 +36,7 @@ def readInFile(file):
         for letter in range(100):
             line = mazeFile.readline()
             letter = line.rstrip('\n')
+            letter = letter.upper()
             maze.append(letter)
 
     if not mazeFile.closed:
@@ -41,12 +49,30 @@ def displayMaze(theMaze):
     for row in range(10):
         print(theMaze[row])
 
+def findEntryPoint(theMaze):
+    for row in range(10):
+        for column in range(1):
+            if theMaze[row][column] == 'E':
+                entryPointRow = row
+                entryPointColumn = column
+                break
+    return entryPointRow, entryPointColumn
+
 
 def main():
     file = "maze.txt"
 
     theMaze = createMaze(readInFile(file))
     displayMaze(theMaze)
+    print(findEntryPoint(theMaze))
+
+    map = createMap()
+    print(map)
+
+
+    #prints the value stored at the key '02'
+    #use this syntax to check or change values at map key locations
+    print(map['02'])
 
 
 main()
