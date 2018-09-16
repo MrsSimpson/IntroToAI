@@ -1,8 +1,3 @@
-__init__ .py
-
-import queue
-import newNode
-import main
 '''
 Function to Create a 10X10 Maze by using the 1D matrix that is passed in as a parameter
 The 1D Matrix that is passed in will contain the letters W(for wall), E(entry), P(path), X(exit)
@@ -12,6 +7,7 @@ be appended to the 2D matrix that will serve as the maze
 '''
 def createMaze(matrix):
     maze = []
+
     #at the end of the for loop, the 1D array called mazeRow will append 10 new characters to the maze array
     for row in range(10):
         mazeRow = []
@@ -60,3 +56,4 @@ def findEntryPoint(theMaze):
                 entryPointColumn = column
                 break
     return entryPointRow, entryPointColumn
+
