@@ -20,13 +20,12 @@ def createMaze(matrix):
         maze.append(mazeRow)
     return maze
 
-def createMap():
+def createMap(theMaze):
     map = {}
-    for i in range(100):
-        if i < 10:
-            map.update({'0'+ str(i): 'F'})
-        else:
-            map.update({str(i): 'F'})
+    for row in range(10):
+        for column in range(10):
+            n = (10 * row) + column
+            map.update({n: [n, theMaze[row][column], 'F']})
     return map
 
 def readInFile(file):
