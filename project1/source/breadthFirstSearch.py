@@ -1,4 +1,4 @@
-from source.newNode import Node
+from source.newNode import *
 
 def createRoot(theQ):
     if theQ  == None:

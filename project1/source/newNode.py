@@ -1,4 +1,4 @@
-from source.breadthFirstSearch.py import *
+from source.breadthFirstSearch import *
 class Node:
     def __init__(self):
         self.location = 0
