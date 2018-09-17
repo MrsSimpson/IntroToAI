@@ -25,7 +25,7 @@ def createMap(theMaze):
     for row in range(10):
         for column in range(10):
             n = (10 * row) + column
-            map.update({n: [n, theMaze[row][column], 'F']})
+            map.update({n: [n, theMaze[row][column], False]})
     return map
 
 def readInFile(file):
@@ -42,12 +42,16 @@ def readInFile(file):
 
     return maze
 
-
 def displayMaze(theMaze):
     for row in range(10):
         print(theMaze[row])
 
-def findEntryPoint(theMaze):
+def findEntryPoint(map):
+    for state in map:
+        if map[state][1] == 'E':
+            return map[state][0]
+
+    '''
     for row in range(10):
         for column in range(1):
             if theMaze[row][column] == 'E':
@@ -55,4 +59,10 @@ def findEntryPoint(theMaze):
                 entryPointColumn = column
                 break
     return entryPointRow, entryPointColumn
+    '''
 
+'''
+def createVisitedList():
+    visited = [] #holds locations of nodes already visited
+    return visited
+'''
