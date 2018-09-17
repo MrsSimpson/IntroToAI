@@ -3,20 +3,26 @@ from source.newNode import Node
 def createRoot(theQ):
     if theQ  == None:
         root = Node()
-        theQ = root
+        theRoot = root
 
-    return theQ
+    return theRoot
 
 def createQueue(Node):
-    theQ = list()
-    if theQ == None:
+    theQ = []
+    if isQueueEmpty == True:
         root = createRoot(theQ)
+        theQ.append(root)
     else:
         theQ.append(Node)
+
+    return theQ
 
 def isQueueEmpty(theQ):
     if theQ == None:
         return True
     else:
         return False
+
+
+
 
