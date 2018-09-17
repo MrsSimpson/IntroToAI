@@ -15,7 +15,7 @@ def main():
     # use this syntax to check or change values at map key locations
     for row in range(10):
         n = 10 * row
-        print(map[(n)], map[n+1], map[n+2], map[n+3], map[n+4], map[n+5], map[n+6], map[n+7], map[n+8], map[n+9])
+        print(map[(n)][1], map[n+1][1], map[n+2][1], map[n+3][1], map[n+4][1], map[n+5][1], map[n+6][1], map[n+7][1], map[n+8][1], map[n+9][1])
 
     entryPoint = findEntryPoint(map)
     initialPosition = Node()
