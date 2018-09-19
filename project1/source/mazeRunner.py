@@ -24,6 +24,8 @@ def createMaze(matrix):
 '''Create Map takes the 2D array previously created and creates a python dictionary named map that creates a key:value pair
  Each Location is unique, therefore serves as the key, the values stored will be the location, the data located at that
  location, and the visited state. Initially all states are set to False because nothing has been visited.'''
+
+
 def createMap(theMaze):
     map = {}
     for row in range(10):
