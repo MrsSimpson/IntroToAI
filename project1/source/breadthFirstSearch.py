@@ -35,9 +35,21 @@ def beginSearch(map):
     theQ = createQueue(entryPoint, map)
     print(theQ[0].location, theQ[0].data, theQ[0].neighbors, theQ[0].visited, theQ[0].path)
     previous = theQ.pop(0)
-    theQ.append(previous.neighbors)
-    print(theQ)
-    
+    for all in previous.neighbors:
+        newNode = Node(all, map)
+        theQ.append(newNode)
+
+    i = 0
+    while i < len(theQ):
+        print(theQ[i].location, theQ[i].data)
+        i += 1
+
+    #while theQ != []:
+
+
+
+
+
 
 
 
