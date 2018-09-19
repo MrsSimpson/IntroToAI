@@ -1,48 +1,58 @@
-from source.breadthFirstSearch import *
 class Node:
-    def __init__(self):
-        self.location = 0
-        self.data = ''
-        self.fringe = []
+    def __init__(self, point, map):
+        self.location = point
+        self.data = map[point][1]
+        self.neighbors = []
         self.visited = False
         self.path = []
+
+    def setNewNode(self, point, map):
+        #self.location = self.getLocation(point)
+        #self.data = self.getData(map, point)
+        self.neighbors = self.findValidNeighbors(point, map)
 
     def getLocation(self, point):
         self.location = point
 
-    def getData(self, theMap, n):
-        self.data = theMap[n][1]
+    def getData(self, map, point):
+        self.data = map[point][1]
 
-    def getNeighbors(self, Node):
-        if Node not in self.fringe:
-            self.fringe.append(Node)
 
-    def isVisited(self, visited):
-        for number in visited:
+    def isVisited(self, prevVisited):
+        for number in prevVisited:
             if self.location == number:
                 return True
             else:
                 return False
+
+
     def setPath(self, previousNode):
-        if previousNode == None:
+        if previousNode.path == []:
             self.path.append(self.location)
         else:
             self.path.append(previousNode.path)
 
-    def findValidNeighbors(self):
-        if ((self.location != 0) and (self.location % 10 != 0) and (self.data == 'P' or self.data == 'X')):
-            leftNeighbor = self.location - 1
-            self.getNeighbors(leftNeighbor)
+        return self.path
 
-        if (not(self.location < 0)) and (self.data == 'P' or self.data == 'X'):
-            topNeighbor = self.location - 10
-            self.getNeighbors(topNeighbor)
 
-        remainder = (self.location + 1) % 10
-        if (remainder != 0) and (self.data == 'P' or self.data == 'X'):
-            rightNeighbor = self.location + 1
-            self.getNeighbors(rightNeighbor)
+#Rething this method. not logical to pass in the data for each neighboring node. Need to check the data at the map point
+#not actually pass in a data value to the function. just pass the map
+    def findValidNeighbors(self, point, map):
+        if ((point % 10 != 0) and (map[point - 1][1] != 'W')):
+            leftNeighbor = point - 1
+            self.neighbors.append(leftNeighbor)
 
-        if (not (self.location + 10) > 99) and (self.data == 'P' or self.data == 'X'):
-            bottomNeighbor = self.location + 10
-            self.getNeighbors(bottomNeighbor)
+        if (not((point - 10) < 0)) and (map[point - 10][1] != 'W'):
+            topNeighbor = point - 10
+            self.neighbors.append(topNeighbor)
+
+        remainder = (point + 1) % 10
+        if (remainder != 0) and (map[point +1][1] != 'W'):
+            rightNeighbor = point + 1
+            self.neighbors.append(rightNeighbor)
+
+        if (not (point + 10) > 99) and (map[point +10][1] != 'W'):
+            bottomNeighbor = point + 10
+            self.neighbors = self.neighbors.append(bottomNeighbor)
+
+        return self.neighbors
