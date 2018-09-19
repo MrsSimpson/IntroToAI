@@ -53,7 +53,7 @@ class Node:
 
         if (not (point + 10) > 99) and (map[point +10][1] != 'W'):
             bottomNeighbor = point + 10
-            self.neighbors = self.neighbors.append(bottomNeighbor)
+            self.neighbors.append(bottomNeighbor)
 
         return self.neighbors
 

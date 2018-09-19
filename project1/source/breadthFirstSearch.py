@@ -44,8 +44,12 @@ def beginSearch(map):
         print(theQ[i].location, theQ[i].data)
         i += 1
 
-    #while theQ != []:
-
+    while theQ != []:
+        current = theQ[0]
+        point = current.location
+        current.findValidNeighbors(point, map)
+        print(current.neighbors)
+        theQ.pop(0)
 
 
 
