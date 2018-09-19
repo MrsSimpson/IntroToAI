@@ -1,17 +1,16 @@
 
 from source.newNode import *
 from source.mazeRunner import *
+from source.breadthFirstSearch import *
 
 
 def main():
     file = "maze.txt"
-
     theMaze = createMaze(readInFile(file))
     displayMaze(theMaze)
 
 
     map = createMap(theMaze)
-    print(findEntryPoint(map))
     # prints the values stored at each key "location"
     # use this syntax to check or change values at map key locations
     for row in range(10):
@@ -29,10 +28,12 @@ def main():
     initialPosition.visited = initialPosition.isVisited(prevVisited)
     print(initialPosition.location)
     print(initialPosition.data)
-    print(initialPosition.path)
-    print(initialPosition.visited)
     print(initialPosition.neighbors)
-    print(prevVisited)
+    print(initialPosition.visited)
+    print(initialPosition.path)
+
+    beginSearch(map)
+
 
 
 main()
