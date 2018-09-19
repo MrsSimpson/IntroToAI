@@ -63,6 +63,7 @@ def findEntryPoint(map):
         if map[state][1] == 'E':
             return map[state][0]
 
+
     '''
     for row in range(10):
         for column in range(1):
