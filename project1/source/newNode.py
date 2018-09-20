@@ -3,7 +3,7 @@ class Node:
         self.location = point
         self.data = map[point][1]
         self.neighbors = [] #A list of all possible neighbors will be added to the list, which will then be added to the Q
-        self.visited = False #when to program pops this node from the Q, this variable will be changed to True
+        self.visited = False
         self.path = [] #path holds the inclusive list of positions the program has taken to arrive at this location
 
     def setNewNode(self, point, map):
@@ -25,12 +25,18 @@ class Node:
             else:
                 return False
 
+    def setVisited(self, map):
+        self.visited = True
+        map[self.location][2] = True
+
 
     def setPath(self, previousNode):
         if previousNode.path == []:
             self.path.append(self.location)
         else:
-            self.path.append(previousNode.path)
+            for each in previousNode.path:
+                self.path.append(each)
+            self.path.append(self.location)
 
         return self.path
 
@@ -56,6 +62,9 @@ class Node:
             self.neighbors.append(bottomNeighbor)
 
         return self.neighbors
+
+
+
 
     #this method should be called when the current node is popped from the Q/Stack
     def addToTheVisitedList(self, visitedList):
