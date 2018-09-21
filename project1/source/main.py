@@ -2,6 +2,7 @@
 from source.newNode import *
 from source.mazeRunner import *
 from source.breadthFirstSearch import *
+from source.depthFirstSearch import DFS
 
 
 def main():
@@ -12,6 +13,9 @@ def main():
     map = createMap(theMaze)
 
     BFS(map)
+
+    map2 = createMap(theMaze)
+    DFS(map2)
 
 
 
