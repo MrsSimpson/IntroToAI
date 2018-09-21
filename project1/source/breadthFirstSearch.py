@@ -24,39 +24,12 @@ def BFS(map):
     theQ = createQueue(entryPoint, map)
 
     while len(theQ) != 0:
-        if theQ[0].data == 'X':
-            print(theQ[0].path)
+        previous = theQ.pop(0)
+        if previous.data == 'X':
+            print(previous.path)
             break
         else:
-            topNeighbor = findTopNeighbor(theQ[0].location, map)
-            if topNeighbor != None:
-                topNode = Node(topNeighbor, map)
-                topNode.visited = topNode.setVisited(map)
-                topNode.setPath(theQ[0])
-                theQ.append(topNode)
-
-            rightNeighbor = findRightNeighbor(theQ[0].location, map)
-            if rightNeighbor != None:
-                rightNode = Node(rightNeighbor, map)
-                rightNode.visited = rightNode.setVisited(map)
-                rightNode.setPath(theQ[0])
-                theQ.append(rightNode)
-
-            bottomNeighbor = findBottomNeighbor(theQ[0].location, map)
-            if bottomNeighbor != None:
-                bottomNode = Node(bottomNeighbor, map)
-                bottomNode.visited = bottomNode.setVisited(map)
-                bottomNode.setPath(theQ[0])
-                theQ.append(bottomNode)
-
-            leftNeighbor = findLeftNeighbor(theQ[0].location, map)
-            if leftNeighbor != None:
-                leftNode = Node(leftNeighbor, map)
-                leftNode.visited = leftNode.setVisited(map)
-                leftNode.setPath(theQ[0])
-                theQ.append(leftNode)
-
-        previous = theQ.pop(0)
+            findValidNeighbors(previous, theQ, map)
 
 
 def createRoot(point, map):
@@ -66,14 +39,12 @@ def createRoot(point, map):
     return root
 
 
-
 def createQueue(point, map):
     theQ = []
     prevVisited = []
     if isQueueEmpty(theQ) == True:
         root = createRoot(point, map)
         prevVisited.append(root.location)
-        root.visited = root.isVisited(prevVisited)
         theQ.append(root)
 
     return theQ
@@ -106,5 +77,32 @@ def findLeftNeighbor(point, map):
         leftNeighbor = point - 1
         return leftNeighbor
 
+def findValidNeighbors(previous, theQ, map):
+    topNeighbor = findTopNeighbor(previous.location, map)
+    if topNeighbor != None:
+        topNode = Node(topNeighbor, map)
+        topNode.setVisited(map)
+        topNode.setPath(previous)
+        theQ.append(topNode)
 
+    rightNeighbor = findRightNeighbor(previous.location, map)
+    if rightNeighbor != None:
+        rightNode = Node(rightNeighbor, map)
+        rightNode.setVisited(map)
+        rightNode.setPath(previous)
+        theQ.append(rightNode)
+
+    bottomNeighbor = findBottomNeighbor(previous.location, map)
+    if bottomNeighbor != None:
+        bottomNode = Node(bottomNeighbor, map)
+        bottomNode.setVisited(map)
+        bottomNode.setPath(previous)
+        theQ.append(bottomNode)
+
+    leftNeighbor = findLeftNeighbor(previous.location, map)
+    if leftNeighbor != None:
+        leftNode = Node(leftNeighbor, map)
+        leftNode.setVisited(map)
+        leftNode.setPath(previous)
+        theQ.append(leftNode)
 
