@@ -3,13 +3,8 @@ class Node:
         self.location = point
         self.data = map[point][1]
         self.neighbors = [] #A list of all possible neighbors will be added to the list, which will then be added to the Q
-        self.visited = False
         self.path = [] #path holds the inclusive list of positions the program has taken to arrive at this location
 
-    def setNewNode(self, point, map):
-        #self.location = self.getLocation(point)
-        #self.data = self.getData(map, point)
-        self.neighbors = self.findValidNeighbors(point, map)
 
     def getLocation(self, point):
         self.location = point
@@ -17,18 +12,8 @@ class Node:
     def getData(self, map, point):
         self.data = map[point][1]
 
-
-    def isVisited(self, prevVisited):
-        for number in prevVisited:
-            if self.location == number:
-                return True
-            else:
-                return False
-
     def setVisited(self, map):
-        self.visited = True
         map[self.location][2] = True
-
 
     def setPath(self, previousNode):
         if previousNode.path == []:
