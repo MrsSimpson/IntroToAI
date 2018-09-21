@@ -22,14 +22,18 @@ from source.mazeRunner import *
 def breadthFirstSearch(map):
     entryPoint = findEntryPoint(map)
     theQ = createQueue(entryPoint, map)
+    previous = theQ[0]
 
     while len(theQ) != 0:
         previous = theQ.pop(0)
         if previous.data == 'X':
-            print("Breadth First Search Found A Path: " + str(previous.path))
+            print("Breadth First Search Found A Valid Path: " + str(previous.path))
             break
         else:
             findValidNeighbors(previous, theQ, map)
+
+    if len(theQ) == 0 and previous.data != 'X':
+        print("Breadth First Search did not find a valid path to exit the maze.")
 
 
 def createRoot(point, map):

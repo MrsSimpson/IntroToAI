@@ -22,15 +22,18 @@ from source.mazeRunner import *
 def depthFirstSearch(map):
     entryPoint = findEntryPoint(map)
     theStack = createStack(entryPoint, map)
+    previous = theStack[0]
 
     while len(theStack) != 0:
         previous = theStack.pop(0)
         if previous.data == 'X':
-            print("Depth First Search Found A Path:   " + str(previous.path))
+            print("Depth First Search Found A Valid Path:   " + str(previous.path))
             break
         else:
             findValidNeighbors(previous, theStack, map)
 
+    if len(theStack) == 0 and previous.data != 'X':
+        print("Depth First Search did not find a valid path to exit the maze.")
 
 def createRoot(point, map):
     root = Node(point, map)

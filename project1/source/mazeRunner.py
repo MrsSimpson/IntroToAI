@@ -23,9 +23,8 @@ def createMaze(matrix):
 
 '''Create Map takes the 2D array previously created and creates a python dictionary named map that creates a key:value pair
  Each Location is unique, therefore serves as the key, the values stored will be the location, the data located at that
- location, and the visited state. Initially all states are set to False because nothing has been visited.'''
-
-
+ location, and the visited state. Initially all states are set to False because nothing has been visited.
+ '''
 def createMap(theMaze):
     map = {}
     for row in range(10):
@@ -35,8 +34,10 @@ def createMap(theMaze):
     return map
 
 
-'''Function to read in the text file and store in a python list (array) called maze.
-The new line character is stripped from each line which leaves only the data to be stored (a single character)'''
+'''
+Function to read in the text file and store in a python list (array) called maze.
+The new line character is stripped from each line which leaves only the data to be stored (a single character)
+'''
 def readInFile(file):
     maze = []
     with open(file, "r") as mazeFile:
@@ -62,8 +63,10 @@ def displayMaze(map):
         print(str(row) + " " + map[n][1] + "  " + map[n +1][1] + "  " + map[n+2][1] + "  " + map[n+3][1] + "  " + map[n+4][1] +
               "  " + map[n+5][1] + "  " + map[n+6][1] + "  " + map[n+7][1] + "  " + map[n+8][1] + "  " + map[n+9][1])
 
-'''Function finds the entry point of the maze. The map dictionary is read in and it searches for the char E. If the E is
-found, the location that E is stored in will returned.'''
+'''
+Function finds the entry point of the maze. The map dictionary is read in and it searches for the char E. If the E is
+found, the location that E is stored in will returned.
+'''
 def findEntryPoint(map):
     for state in map:
         if map[state][1] == 'E':
