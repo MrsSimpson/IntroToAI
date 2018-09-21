@@ -19,14 +19,14 @@ from source.mazeRunner import *
 #back in the main loop, pop front of the queue. and set as previousNode. (bc initialPosition has been explored.)
 
 #now we return to the top of the do while loop.
-def BFS(map):
+def breadthFirstSearch(map):
     entryPoint = findEntryPoint(map)
     theQ = createQueue(entryPoint, map)
 
     while len(theQ) != 0:
         previous = theQ.pop(0)
         if previous.data == 'X':
-            print(previous.path)
+            print("Breadth First Search Found A Path: " + str(previous.path))
             break
         else:
             findValidNeighbors(previous, theQ, map)
@@ -41,10 +41,8 @@ def createRoot(point, map):
 
 def createQueue(point, map):
     theQ = []
-    prevVisited = []
     if isQueueEmpty(theQ) == True:
         root = createRoot(point, map)
-        prevVisited.append(root.location)
         theQ.append(root)
 
     return theQ

@@ -19,14 +19,14 @@ from source.mazeRunner import *
 #back in the main loop, pop front of the queue. and set as previousNode. (bc initialPosition has been explored.)
 
 #now we return to the top of the do while loop.
-def DFS(map):
+def depthFirstSearch(map):
     entryPoint = findEntryPoint(map)
     theStack = createStack(entryPoint, map)
 
     while len(theStack) != 0:
         previous = theStack.pop(0)
         if previous.data == 'X':
-            print(previous.path)
+            print("Depth First Search Found A Path:   " + str(previous.path))
             break
         else:
             findValidNeighbors(previous, theStack, map)
@@ -41,10 +41,8 @@ def createRoot(point, map):
 
 def createStack(point, map):
     theStack = []
-    prevVisited = []
     if isStackEmpty(theStack) == True:
         root = createRoot(point, map)
-        prevVisited.append(root.location)
         theStack.append(root)
 
     return theStack

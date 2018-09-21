@@ -1,22 +1,18 @@
-
-from source.newNode import *
 from source.mazeRunner import *
-from source.breadthFirstSearch import *
-from source.depthFirstSearch import DFS
+from source.breadthFirstSearch import breadthFirstSearch
+from source.depthFirstSearch import depthFirstSearch
 
 
 def main():
     file = "maze.txt"
     theMaze = createMaze(readInFile(file))
-    displayMaze(theMaze)
+
 
     map = createMap(theMaze)
-
-    BFS(map)
+    displayMaze(map)
+    breadthFirstSearch(map)
 
     map2 = createMap(theMaze)
-    DFS(map2)
-
-
+    depthFirstSearch(map2)
 
 main()
