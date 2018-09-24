@@ -1,3 +1,9 @@
+'''Created by Lacy Simpson
+Class: CSC 414 Intro to Artificial Intelligence
+Assignment #1 The Maze
+Date: September 20, 2018
+'''
+
 '''The Node class contains the location, the data, and the path at the location passed in.
 Each node is created with the passed in parameters point, and map.
 The Node class also has methods to set the Visited state to true when called.

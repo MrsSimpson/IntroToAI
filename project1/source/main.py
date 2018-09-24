@@ -24,7 +24,7 @@ The map will then be reset and the call for the depth first search will be made.
  '''
 def main():
     file = "maze.txt"
-    theMaze = createMaze(readInFile(file)) 
+    theMaze = createMaze(readInFile(file))
 
     map = createMap(theMaze)
     displayMaze(map)

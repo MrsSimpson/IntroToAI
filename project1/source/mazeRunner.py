@@ -1,3 +1,9 @@
+'''Created by Lacy Simpson
+Class: CSC 414 Intro to Artificial Intelligence
+Assignment #1 The Maze
+Date: September 20, 2018
+'''
+
 '''
 Function to Create a 10X10 Maze by using the 1D matrix that is passed in as a parameter
 The 1D Matrix that is passed in will contain the letters W(for wall), E(entry), P(path), X(exit)
