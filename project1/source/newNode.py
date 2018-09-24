@@ -1,3 +1,9 @@
+'''The Node class contains the location, the data, and the path at the location passed in.
+Each node is created with the passed in parameters point, and map.
+The Node class also has methods to set the Visited state to true when called.
+A method to set the path by appending the previous nodes path and the current nodes position.'''
+
+
 class Node:
     def __init__(self, point, map):
         self.location = point

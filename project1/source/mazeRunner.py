@@ -52,16 +52,20 @@ def readInFile(file):
 
     return maze
 
-'''Function to output the 2D array to the console. The console will display the character stored at each location.'''
+
+'''
+Function to output the map to the console. The console will display the character stored at each location as a 
+10 X 10 Maze. The proper labels for The Maze as well as the row and column numbers are output
+'''
 def displayMaze(map):
-    print("            THE MAZE")
+    print("                THE MAZE")
     for i in range(0, 10):
-        print("  " + str(i), end='')
+        print("   " + str(i), end='')
     print()
     for row in range(10):
         n = row * 10
-        print(str(row) + " " + map[n][1] + "  " + map[n +1][1] + "  " + map[n+2][1] + "  " + map[n+3][1] + "  " + map[n+4][1] +
-              "  " + map[n+5][1] + "  " + map[n+6][1] + "  " + map[n+7][1] + "  " + map[n+8][1] + "  " + map[n+9][1])
+        print(str(row) + "  " + map[n][1] + "   " + map[n +1][1] + "   " + map[n+2][1] + "   " + map[n+3][1] + "   " + map[n+4][1] +
+              "   " + map[n+5][1] + "   " + map[n+6][1] + "   " + map[n+7][1] + "   " + map[n+8][1] + "   " + map[n+9][1])
 
 '''
 Function finds the entry point of the maze. The map dictionary is read in and it searches for the char E. If the E is
