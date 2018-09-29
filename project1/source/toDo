@@ -1,5 +1,0 @@
-* create grid from the text file that holds the locations of all walls, paths, entries, and exits
-* print the grid to the console
-* create class to build nodes that represent each state
-* create a visited list to hold locations of all places already visited (not sure where to put this just yet)
-        Do I need a map dictionary to hold all the states? or do I just need an array to hold the locations of visited locations?
