@@ -1,6 +1,6 @@
-from source.mazeRunner import *
-from source.breadthFirstSearch import breadthFirstSearch
-from source.depthFirstSearch import depthFirstSearch
+from mazeRunner import *
+from breadthFirstSearch import breadthFirstSearch
+from depthFirstSearch import depthFirstSearch
 '''Created by Lacy Simpson
 Class: CSC 414 Intro to Artificial Intelligence
 Assignment #1 The Maze
@@ -23,7 +23,7 @@ The map will then be reset and the call for the depth first search will be made.
  search will be made according to each finding.
  '''
 def main():
-    file = "maze.txt"
+    file = "maze2.txt"
     theMaze = createMaze(readInFile(file))
 
     map = createMap(theMaze)

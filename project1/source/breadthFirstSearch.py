@@ -1,5 +1,5 @@
-from source.newNode import *
-from source.mazeRunner import *
+from newNode import *
+from mazeRunner import *
 
 '''Created by Lacy Simpson
 Class: CSC 414 Intro to Artificial Intelligence

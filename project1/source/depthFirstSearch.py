@@ -1,5 +1,5 @@
-from source.newNode import *
-from source.mazeRunner import *
+from newNode import *
+from mazeRunner import *
 
 '''Created by Lacy Simpson
 Class: CSC 414 Intro to Artificial Intelligence
@@ -23,6 +23,7 @@ def depthFirstSearch(map):
     while len(theStack) != 0:
         previous = theStack.pop(0)
         if previous.data == 'X':
+
             print("Depth First Search Found A Valid Path:   " + str(previous.path))
             break
         else:
