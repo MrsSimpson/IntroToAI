@@ -3,7 +3,7 @@
 CSC 412 is a repository for my individual projects assigned for Intro to AI at USM Gulf Park
 during the Fall 2018 Semester.
 
-##Project 1 - The Maze Runner
+## Project 1 - The Maze Runner
 
 The purpose of this program is to traverse a maze using breadth first search and also depth first search. 
 
@@ -16,7 +16,7 @@ The program will strip the '\n' character from each line before storing the sing
 * Use Depth First search to find a path to exit
 * Display the route taken by each search
 
-##Project 2 - The Slider 8 Puzzle
+## Project 2 - The Slider 8 Puzzle
 
 The purpose of this program is to create an agent that will solve a 3X3 slider puzzle using breadth first search,
 depth first search, A* Search using misplaced tiles, and A* search using the Manhattan distance.
