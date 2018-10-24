@@ -17,6 +17,14 @@ def find_starting_position(environment):
     return starting_point
 
 
+def check_goal_state(current_node):
+    """Check to see if the current node is the goal state"""
+    if current_node.start_state == [1, 2, 3, 4, 5, 6, 7, 8, 0]:
+        return True
+
+    return False
+
+
 def check_visited(visited, current_node):
     """Check to see if the start has been visited already"""
 

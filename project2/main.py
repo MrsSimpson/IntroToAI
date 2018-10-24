@@ -2,12 +2,15 @@
 
 
 from subpackages.solve_the_puzzle import create_starting_state
+from subpackages.node import Node
 
 
 def main():
     """Main will run the slider 8 puzzle program by calling necessary functions."""
     menu()
     initial_environment = create_starting_state()
+    current_node = Node(initial_environment)
+
 
 
 def menu():
