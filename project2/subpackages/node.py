@@ -1,7 +1,7 @@
 """node class used for creating new node states"""
 
 
-class Node:
+class Node(object):
     """node class used for creating new node states"""
     def __init__(self, environment):
         self.start_state = environment
@@ -9,7 +9,6 @@ class Node:
         self.empty_spot = None
         self.depth = 0
         self.heuristic = 0
-        self.is_visited = False
         self.path = []
 
     def find_empty_position(self):

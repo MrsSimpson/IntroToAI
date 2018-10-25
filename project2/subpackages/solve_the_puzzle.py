@@ -1,5 +1,7 @@
 """solve the slider puzzle"""
 
+from __future__ import print_function
+
 
 def menu():
     """Give the user a choice on how to create the puzzle."""
@@ -10,17 +12,17 @@ def menu():
 
 def pick_a_search():
     """Give the user a choice on which search to perform."""
-    print("Please select one of the following choices to solve the slider puzzle.")
-    print("1. Solve using breadth first search")
-    print("2. Solve using depth first search")
-    print("3. Solve with A* Search using the number of misplaced tiles.")
-    print("4. Solve with A* Search using the manhattan distance")
+    print ("Please select one of the following choices to solve the slider puzzle.")
+    print ("1. Solve using breadth first search")
+    print ("2. Solve using depth first search")
+    print ("3. Solve with A* Search using the number of misplaced tiles.")
+    print ("4. Solve with A* Search using the manhattan distance")
 
 
 def create_starting_state():
     """Create the starting state of the puzzle."""
-    #environment = [2, 7, 5, 1, 4, 3, 6, 0, 8]
-    environment = [7, 8, 3, 4, 1, 5, 6, 0, 2]
+    environment = [2, 7, 5, 1, 4, 3, 6, 0, 8]
+    #environment = [7, 8, 3, 4, 1, 5, 6, 0, 2]
     return environment
 
 
@@ -62,13 +64,8 @@ def add_to_visited(visited, new_state, counter):
     visited.update({environment_string: counter})
 
 
-def inc_the_counter(counter):
-    counter += 1
-    return counter
-
-
 def swap_empty_position(new_state, current_node, new_empty_spot):
     """Swap the positions in the new environment"""
-    new_state[current_node.empty_spot], new_state[new_empty_spot] = new_state[new_empty_spot], new_state[
-        current_node.empty_spot]
+    new_state[current_node.empty_spot], new_state[new_empty_spot] = \
+        new_state[new_empty_spot], new_state[current_node.empty_spot]
     return new_state
