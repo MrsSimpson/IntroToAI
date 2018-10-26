@@ -25,10 +25,13 @@ class Node(object):
             self.state_string += str(number)
         return self.state_string
 
-    def set_path(self, previous_node):
+    def set_path(self, previous_node, new_spot):
         """set the path of the open position"""
         if not previous_node.path:
-            self.path.append(self.empty_spot)
+            self.path.append(str(previous_node.empty_spot) + " swapped for " + str(new_spot))
+            return self.path
+
         else:
             self.path.append(previous_node.path)
-            self.path.append(self.empty_spot)
+            self.path.append(str(previous_node.empty_spot) + " swapped for " + str(new_spot))
+            return self.path

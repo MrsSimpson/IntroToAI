@@ -36,6 +36,7 @@ def begin_breadth_first_search(initial_node, visited_map, start_time):
                 the_string += str(number)
             print(COUNTER, "nodes were produced before the solution was found")
             print("The solution was found at the", visited_map.get(the_string), "node")
+            print('[%s]' % ', '.join(map(str, current_node.path)))
             break
 
     if not queue:
@@ -63,13 +64,14 @@ def move_to_top(current_node, visited_map, queue):
 
     new_empty_spot = current_node.empty_spot - 3
     new_state = current_node.start_state[:]
-    new_state = swap_empty_position(new_state, current_node, new_empty_spot)
+    new_state = swap_empty_position(new_state, current_node.empty_spot, new_empty_spot)
 
     if not check_visited(visited_map, new_state):
         set_glob_counter()
         add_to_visited(visited_map, new_state, COUNTER)
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
+        new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         queue.append(new_node)
 
 
@@ -80,13 +82,14 @@ def move_to_right(current_node, visited_map, queue):
 
     new_empty_spot = current_node.empty_spot + 1
     new_state = current_node.start_state[:]
-    new_state = swap_empty_position(new_state, current_node, new_empty_spot)
+    new_state = swap_empty_position(new_state, current_node.empty_spot, new_empty_spot)
 
     if not check_visited(visited_map, new_state):
         set_glob_counter()
         add_to_visited(visited_map, new_state, COUNTER)
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
+        new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         queue.append(new_node)
 
 
@@ -97,13 +100,14 @@ def move_to_bottom(current_node, visited_map, queue):
 
     new_empty_spot = current_node.empty_spot + 3
     new_state = current_node.start_state[:]
-    new_state = swap_empty_position(new_state, current_node, new_empty_spot)
+    new_state = swap_empty_position(new_state, current_node.empty_spot, new_empty_spot)
 
     if not check_visited(visited_map, new_state):
         set_glob_counter()
         add_to_visited(visited_map, new_state, COUNTER)
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
+        new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         queue.append(new_node)
 
 
@@ -114,11 +118,12 @@ def move_to_left(current_node, visited_map, queue):
 
     new_empty_spot = current_node.empty_spot - 1
     new_state = current_node.start_state[:]
-    new_state = swap_empty_position(new_state, current_node, new_empty_spot)
+    new_state = swap_empty_position(new_state, current_node.empty_spot, new_empty_spot)
 
     if not check_visited(visited_map, new_state):
         set_glob_counter()
         add_to_visited(visited_map, new_state, COUNTER)
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
+        new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         queue.append(new_node)

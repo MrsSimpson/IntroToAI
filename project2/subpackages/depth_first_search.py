@@ -19,7 +19,9 @@ def begin_depth_first_search(initial_node, visited_map, start_time):
     """function to use breadth first search to solve the slider puzzle"""
 
     stack = []
+
     stack.append(initial_node)
+
     while stack:  # while the queue still contains elements
         current_node = pop_from_queue(stack)
         if not check_goal_state(current_node):  # if goal state was not found
@@ -56,7 +58,7 @@ def move_to_top(current_node, visited_map, stack):
 
     new_empty_spot = current_node.empty_spot - 3
     new_state = current_node.start_state[:]
-    new_state = swap_empty_position(new_state, current_node, new_empty_spot)
+    new_state = swap_empty_position(new_state, current_node.empty_spot, new_empty_spot)
 
     if not check_visited(visited_map, new_state):
         set_glob_counter()
@@ -73,7 +75,7 @@ def move_to_right(current_node, visited_map, stack):
 
     new_empty_spot = current_node.empty_spot + 1
     new_state = current_node.start_state[:]
-    new_state = swap_empty_position(new_state, current_node, new_empty_spot)
+    new_state = swap_empty_position(new_state, current_node.empty_spot, new_empty_spot)
 
     if not check_visited(visited_map, new_state):
         set_glob_counter()
@@ -90,7 +92,7 @@ def move_to_bottom(current_node, visited_map, stack):
 
     new_empty_spot = current_node.empty_spot + 3
     new_state = current_node.start_state[:]
-    new_state = swap_empty_position(new_state, current_node, new_empty_spot)
+    new_state = swap_empty_position(new_state, current_node.empty_spot, new_empty_spot)
 
     if not check_visited(visited_map, new_state):
         set_glob_counter()
@@ -107,7 +109,7 @@ def move_to_left(current_node, visited_map, stack):
 
     new_empty_spot = current_node.empty_spot - 1
     new_state = current_node.start_state[:]
-    new_state = swap_empty_position(new_state, current_node, new_empty_spot)
+    new_state = swap_empty_position(new_state, current_node.empty_spot, new_empty_spot)
 
     if not check_visited(visited_map, new_state):
         set_glob_counter()
