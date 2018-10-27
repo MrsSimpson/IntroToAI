@@ -4,40 +4,6 @@ from __future__ import print_function
 import random
 
 
-def menu():
-    """Give the user a choice on how to create the puzzle."""
-    choice = ''
-    print("       Welcome to Slider 8\n")
-    choice = input("Please select one of the following choices. \n1. Press 1 to create a completely random puzzle.\n"
-                   "2. Press 2 to pick the empty space for a random puzzle.")
-    while not (choice in ('1', '2')):
-        print("You did not select a valid option, please select 1 or 2.")
-        choice = input("Please select one of the following choices. \n"
-                       "1. Create Random Starting State.\n"
-                       "2. Pick a Starting Space.\n")
-
-    return get_user_input(choice)
-
-
-def get_user_input(choice):
-    """do something with the users choice"""
-    if choice == '1':
-        rand_environment = create_random_environment()
-        print("Random Start State Created", rand_environment)
-        return rand_environment
-
-    if choice == '2':
-        choice2 = ''
-        choice2 = input("\nPlease select an an empty position.\n"
-                        "1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9\n")
-        while not (choice2 in ('1', '2', '3', '4', '5', '6', '7', '8', '9')):
-            print("\nYou did not select a valid option, please select a single number in the range 1 - 9")
-            choice2 = input("Please select an an empty position.\n"
-                            "1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9 \n")
-        rand_environment = create_random_environment()
-        user_environment = create_user_defined_environment(rand_environment, int(choice2))
-        return user_environment
-
 
 def create_random_environment():
     """create a random puzzle board for the game"""

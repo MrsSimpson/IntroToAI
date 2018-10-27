@@ -36,7 +36,8 @@ def begin_breadth_first_search(initial_node, visited_map, start_time):
                 the_string += str(number)
             print(COUNTER, "nodes were produced before the solution was found")
             print("The solution was found at the", visited_map.get(the_string), "node")
-            print('[%s]' % ', '.join(map(str, current_node.path)))
+            for element in current_node.path:
+                print(element)
             break
 
     if not queue:

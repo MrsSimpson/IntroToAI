@@ -65,6 +65,7 @@ def move_to_top(current_node, visited_map, stack):
         add_to_visited(visited_map, new_state, COUNTER)
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
+        new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         stack.append(new_node)
 
 
@@ -82,6 +83,7 @@ def move_to_right(current_node, visited_map, stack):
         add_to_visited(visited_map, new_state, COUNTER)
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
+        new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         stack.append(new_node)
 
 
@@ -99,6 +101,7 @@ def move_to_bottom(current_node, visited_map, stack):
         add_to_visited(visited_map, new_state, COUNTER)
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
+        new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         stack.append(new_node)
 
 
@@ -116,4 +119,5 @@ def move_to_left(current_node, visited_map, stack):
         add_to_visited(visited_map, new_state, COUNTER)
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
+        new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         stack.append(new_node)
