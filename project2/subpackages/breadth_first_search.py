@@ -4,7 +4,7 @@
 from __future__ import print_function
 import time
 from collections import deque
-from subpackages.solve_the_puzzle import check_goal_state, check_visited, add_to_visited, swap_empty_position
+from subpackages.solve_the_puzzle import check_goal_state, check_visited, add_to_visited, swap_empty_position, print_the_game
 from subpackages.node import Node
 
 
@@ -29,7 +29,8 @@ def begin_breadth_first_search(initial_node, visited_map, start_time):
             move_to_left(current_node, visited_map, queue)
 
         else:
-            print("The Solution was found: ", current_node.start_state)
+            print("The Solution was found: ")
+            print_the_game(current_node.start_state)
             print("It took", "%s seconds to find the solution" % (time.clock() - start_time))
             the_string = ""
             for number in current_node.start_state:

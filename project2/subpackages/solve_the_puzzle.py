@@ -4,6 +4,12 @@ from __future__ import print_function
 import random
 
 
+def print_the_game(environment):
+    print("-------------")
+    print("|", environment[0], "|", environment[1], "|", environment[2], "|")
+    print("|",environment[3], "|", environment[4], "|", environment[5], "|")
+    print("|",environment[6], "|", environment[7], "|", environment[8], "|")
+    print("-------------")
 
 def create_random_environment():
     """create a random puzzle board for the game"""
@@ -23,7 +29,6 @@ def create_user_defined_environment(rand_environment, user_choice):
             empty_position = i
 
     user_environment = swap_empty_position(rand_environment, empty_position, user_choice-1)
-    print("Random Start State Created with your choice of the empty space", user_environment)
     return user_environment
 
 
