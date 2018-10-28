@@ -1,11 +1,12 @@
+'''                                             Created by Lacy Simpson
+                                    Class: CSC 414 Intro to Artificial Intelligence
+                                                Assignment #1 The Maze
+                                               Date: September 20, 2018
+'''
+
+
 from newNode import *
 from mazeRunner import *
-
-'''Created by Lacy Simpson
-Class: CSC 414 Intro to Artificial Intelligence
-Assignment #1 The Maze
-Date: September 20, 2018
-'''
 
 
 '''The depthFirstSearch function finds the entry point marked 'E' on the map. The entry point will be used to create
@@ -105,7 +106,7 @@ def findLeftNeighbor(point, map):
 
 
 '''Function will check the top, right, bottom, and then left neighbor of the node previously popped from the Stack. If
-there is a valid neighboring location at any of these locations, a node will be created for that location, the path to
+there is a valid neighboring location at any of these locations, a node will be created for that state, the path to
 that node will be set, and then the node will be added to the Stack using the LIFO approach. '''
 def findValidNeighbors(previous, theStack, map):
     topNeighbor = findTopNeighbor(previous.location, map)

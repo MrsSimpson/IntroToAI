@@ -1,11 +1,13 @@
-from mazeRunner import *
-from breadthFirstSearch import breadthFirstSearch
-from depthFirstSearch import depthFirstSearch
 '''                                             Created by Lacy Simpson
-                                     Class: CSC 414 Intro to Artificial Intelligence
+                                    Class: CSC 414 Intro to Artificial Intelligence
                                                 Assignment #1 The Maze
                                                Date: September 20, 2018
 '''
+
+from mazeRunner import *
+from breadthFirstSearch import breadthFirstSearch
+from depthFirstSearch import depthFirstSearch
+
 '''                                            About THE MAZE Project
 The purpose of this assignment is to use breadth first search and depth first search to traverse a 10X10 maze and
 find valid path/s to the exit. The text file that is read in a file that contains characters E(Entrance), X(Exit), W(wall), 
@@ -25,7 +27,7 @@ The map will then be reset and the call for the depth first search will be made.
 
 
 def main():
-    file = "maze2.txt"
+    file = "maze.txt"
     the_maze = createMaze(readInFile(file))
 
     map = createMap(the_maze)

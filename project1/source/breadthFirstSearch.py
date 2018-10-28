@@ -1,17 +1,18 @@
+'''                                             Created by Lacy Simpson
+                                    Class: CSC 414 Intro to Artificial Intelligence
+                                                Assignment #1 The Maze
+                                               Date: September 20, 2018
+'''
+
 from newNode import *
 from mazeRunner import *
 
-'''Created by Lacy Simpson
-Class: CSC 414 Intro to Artificial Intelligence
-Assignment #1 The Maze
-Date: September 20, 2018
-'''
 
 '''The breadthFirstSearch function finds the entry point marked 'E' on the map. The entry point will be used to create
 the Queue. The program will then drop into the while loop as long as the length of theQ is not equal to 0. The previous
 variable will be set by popping the 0 index of the Queue. The program will then check to see if previous contains the
 desired state. If it does the results will be displayed and the program will break from the while loop. If not, the 
-function to find valid neighbors of the node in previous. If the while loop ends, a check is made to see if the Q is 
+function to find valid neighbors of the node in previous is called. If the while loop ends, a check is made to see if the Q is 
 empty and the previous node popped from the X contained the 'X'. If it did not, we know that a valid path was not found
 for the maze.'''
 def breadthFirstSearch(map):
@@ -54,6 +55,7 @@ def isQueueEmpty(theQ):
         return True
     else:
         return False
+
 
 '''funciton used to find the top neighbor from the point that is passed in. The if statement checks to see if the point 
 being checked is on the board. If the point - 10 is a negative value, then we know we have moved off the board.
@@ -100,7 +102,7 @@ def findLeftNeighbor(point, map):
 
 
 '''Function will check the top, right, bottom, and then left neighbor of the node previously popped from the Queue. If
-their is a valid neighboring location at any of these locations, a node will be created for that location, the path to
+there is a valid neighboring location from any of these locations, a node will be created for that state, the path to
 that node will be set, and then the node will be added to the Queue using the FIFO approach. '''
 def findValidNeighbors(previous, theQ, map):
     topNeighbor = findTopNeighbor(previous.location, map)

@@ -1,7 +1,7 @@
-'''Created by Lacy Simpson
-Class: CSC 414 Intro to Artificial Intelligence
-Assignment #1 The Maze
-Date: September 20, 2018
+'''                                             Created by Lacy Simpson
+                                    Class: CSC 414 Intro to Artificial Intelligence
+                                                Assignment #1 The Maze
+                                               Date: September 20, 2018
 '''
 
 '''
