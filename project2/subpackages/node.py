@@ -32,8 +32,8 @@ class Node():
             return self.path
 
         else:
-            self.path.append(previous_node.path)
             self.path.append(str(previous_node.empty_spot) + " swapped for " + str(new_spot))
+            self.path.append(previous_node.path)
             return self.path
 
     def calculate_misplaced_tiles(self):
@@ -50,3 +50,35 @@ class Node():
         self.heuristic = heuristic
         return self.heuristic
 
+    def calculate_manhattan_distance(self):
+        """Calculates the total cost of tiles that need to be moved to correct position"""
+        heuristic = 0
+        counter = 0
+        for row in range(3):
+            for column in range(3):
+                current_val = self.start_state[counter]
+                counter += 1
+                if current_val == 0:
+                    continue
+                else:
+                    correct_row, correct_column = self.find_correct_position(current_val)
+                    out_of_place = abs(row - correct_row) + abs(column - correct_column)
+                    heuristic += out_of_place
+
+
+        self.heuristic = heuristic
+        return self.heuristic
+
+    def find_correct_position(self, value):
+        if value in (1, 2, 3):
+            row = 0
+            column = value - 1
+            return row, column
+        elif value in (4, 5, 6):
+            row = 1
+            column = (value) - 4
+            return row, column
+        elif value in (7, 8):
+            row = 2
+            column = (value) - 7
+            return row, column
