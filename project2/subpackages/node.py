@@ -11,7 +11,6 @@ class Node():
         self.heuristic = None
         self.path = []
 
-
     def find_empty_position(self):
         """find the empty position of the node's state"""
         for i in range(10):

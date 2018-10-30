@@ -32,15 +32,6 @@ def create_user_defined_environment(rand_environment, user_choice):
     return user_environment
 
 
-def pick_a_search():
-    """Give the user a choice on which search to perform."""
-    print ("Please select one of the following choices to solve the slider puzzle.")
-    print ("1. Solve using breadth first search")
-    print ("2. Solve using depth first search")
-    print ("3. Solve with A* Search using the number of misplaced tiles.")
-    print ("4. Solve with A* Search using the manhattan distance")
-
-
 def create_starting_state():
     """Create the starting state of the puzzle."""
     environment = [2, 7, 5, 1, 4, 3, 6, 0, 8]
