@@ -64,12 +64,14 @@ def user_search_choice(environment):
     print("\nYour AI agent can search for the solution to your puzzle by using one of the following search algorithms. ")
     print("\nPlease select which search you would like to perform.")
     user_choice = input("1. Select 1 for breadth first search.\n"
-          "2. Select 2 for depth first search\n3. Select 3 for A* Search using misplaced tiles.")
-    while not (user_choice in ('1', '2', '3')):
+          "2. Select 2 for depth first search\n3. Select 3 for A* Search using misplaced tiles.\n4. Select 4 for A* "
+                        "Search using manhattan distance\n")
+    while not (user_choice in ('1', '2', '3', '4')):
         print("\nYou did not select a valid option.")
         user_choice = input("1. Select 1 for breadth first search\n"
           "2. Select 2 for depth first search\n"
-          "3. Select 3 for A* Search using misplaced tiles.\n")
+          "3. Select 3 for A* Search using misplaced tiles.\n"
+          "4. Select 4 for A* Search using manhattan distance\n")
 
     if(user_choice == '1'):
         visited_map = {}
@@ -98,6 +100,16 @@ def user_search_choice(environment):
         current_node.empty_spot = current_node.find_empty_position()
         current_node.create_state_string()
         current_node.heuristic = current_node.calculate_misplaced_tiles()
+        visited_map.update({current_node.state_string: 1})
+        begin_a_star_misplaced_tiles(current_node, visited_map, start_time)
+
+    if (user_choice == '4'):
+        visited_map = {}
+        start_time = time.clock()
+        current_node = Node(environment)
+        current_node.empty_spot = current_node.find_empty_position()
+        current_node.create_state_string()
+        current_node.heuristic = current_node.calculate_manhattan_distance()
         visited_map.update({current_node.state_string: 1})
         begin_a_star_misplaced_tiles(current_node, visited_map, start_time)
 
