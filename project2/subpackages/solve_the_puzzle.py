@@ -35,8 +35,8 @@ def create_user_defined_environment(rand_environment, user_choice):
 
 def create_starting_state():
     """Create the starting state of the puzzle."""
-    environment = [2, 7, 5, 1, 4, 3, 6, 0, 8]
-    #environment = [7, 8, 3, 4, 1, 5, 6, 0, 2]
+    #environment = [2, 7, 5, 1, 4, 3, 6, 0, 8]
+    environment = [7, 8, 3, 4, 1, 5, 6, 0, 2]
     return environment
 
 

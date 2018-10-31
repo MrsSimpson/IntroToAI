@@ -16,7 +16,7 @@ def set_glob_counter():
     COUNTER += 1
 
 
-def begin_a_star_misplaced_tiles(initial_node, visited_map, start_time):
+def begin_a_star_manhattan_distance(initial_node, visited_map, start_time):
     """function to use a* search with misplaced tiles as heuristic search to solve the
     slider puzzle"""
     queue = create_queue(initial_node)

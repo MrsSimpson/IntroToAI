@@ -4,6 +4,7 @@ from subpackages.depth_first_search import begin_depth_first_search
 from subpackages.solve_the_puzzle import create_random_environment, \
      create_user_defined_environment, print_the_game
 from subpackages.a_star_misplaced_tiles import begin_a_star_misplaced_tiles
+from subpackages.a_star_manhattan_distance import begin_a_star_manhattan_distance
 from subpackages.node import Node
 
 
@@ -111,4 +112,4 @@ def user_search_choice(environment):
         current_node.create_state_string()
         current_node.heuristic = current_node.calculate_manhattan_distance()
         visited_map.update({current_node.state_string: 1})
-        begin_a_star_misplaced_tiles(current_node, visited_map, start_time)
+        begin_a_star_manhattan_distance(current_node, visited_map, start_time)
