@@ -4,7 +4,8 @@
 from __future__ import print_function
 import time
 from collections import deque
-from subpackages.solve_the_puzzle import check_goal_state, check_visited, add_to_visited, swap_empty_position, print_the_game
+from subpackages.solve_the_puzzle import check_goal_state, check_visited, add_to_visited, \
+    swap_empty_position, print_the_game
 from subpackages.node import Node
 
 

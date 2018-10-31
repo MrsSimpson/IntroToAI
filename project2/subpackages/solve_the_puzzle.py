@@ -5,10 +5,11 @@ import random
 
 
 def print_the_game(environment):
+    """function to print the state of the board as passed in"""
     print("-------------")
     print("|", environment[0], "|", environment[1], "|", environment[2], "|")
-    print("|",environment[3], "|", environment[4], "|", environment[5], "|")
-    print("|",environment[6], "|", environment[7], "|", environment[8], "|")
+    print("|", environment[3], "|", environment[4], "|", environment[5], "|")
+    print("|", environment[6], "|", environment[7], "|", environment[8], "|")
     print("-------------")
 
 def create_random_environment():
