@@ -1,7 +1,9 @@
+"""A* search uses a heuristic and priority queue to evaluate which states get chosen"""
 from __future__ import print_function
 import time
 import heapq as Q
-from subpackages.solve_the_puzzle import check_goal_state, check_visited, add_to_visited, swap_empty_position, print_the_game
+from subpackages.solve_the_puzzle import check_goal_state, check_visited, add_to_visited, \
+     swap_empty_position, print_the_game
 from subpackages.node import Node
 
 
@@ -15,7 +17,8 @@ def set_glob_counter():
 
 
 def begin_a_star_misplaced_tiles(initial_node, visited_map, start_time):
-    """function to use a* search with misplaced tiles as heuristic search to solve the slider puzzle"""
+    """function to use a* search with misplaced tiles as heuristic search to solve the
+    slider puzzle"""
     queue = create_queue(initial_node)
     while queue:  # while the queue still contains elements
         current_node = pop_from_queue(queue)
@@ -132,4 +135,3 @@ def move_to_left(current_node, visited_map, queue):
         new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         new_node.heuristic = new_node.calculate_manhattan_distance()
         Q.heappush(queue, (new_node.heuristic, new_node.start_state, new_node))
-

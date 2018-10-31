@@ -31,13 +31,14 @@ class Node():
             self.path.append(str(previous_node.empty_spot) + " swapped for " + str(new_spot))
             return self.path
 
-        else:
-            self.path.append(str(previous_node.empty_spot) + " swapped for " + str(new_spot))
-            self.path.append(previous_node.path)
-            return self.path
+
+        self.path.append(str(previous_node.empty_spot) + " swapped for " + str(new_spot))
+        self.path.append(previous_node.path)
+        return self.path
 
     def calculate_misplaced_tiles(self):
-        """calculates the number of tiles that are out of position and creates a huristic from this number."""
+        """calculates the number of tiles that are out of position and creates a heuristic from
+         this number."""
         heuristic = 0
         for tile in range(9):
             if tile == 8:
@@ -61,7 +62,7 @@ class Node():
                 if current_val == 0:
                     continue
                 else:
-                    correct_row, correct_column = self.find_correct_position(current_val)
+                    correct_row, correct_column = find_correct_position(current_val)
                     out_of_place = abs(row - correct_row) + abs(column - correct_column)
                     heuristic += out_of_place
 
@@ -69,16 +70,19 @@ class Node():
         self.heuristic = heuristic
         return self.heuristic
 
-    def find_correct_position(self, value):
-        if value in (1, 2, 3):
-            row = 0
-            column = value - 1
-            return row, column
-        elif value in (4, 5, 6):
-            row = 1
-            column = (value) - 4
-            return row, column
-        elif value in (7, 8):
-            row = 2
-            column = (value) - 7
-            return row, column
+def find_correct_position(value):
+    """finds the correct position of the current value"""
+    if value in (1, 2, 3):
+        row = 0
+        column = value - 1
+        return row, column
+    if value in (4, 5, 6):
+        row = 1
+        column = (value) - 4
+        return row, column
+    if value in (7, 8):
+        row = 2
+        column = (value) - 7
+        return row, column
+
+    return None
