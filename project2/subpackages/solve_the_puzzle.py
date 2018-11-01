@@ -45,8 +45,8 @@ def create_starting_state():
     #the environment created is hard coded. Different versions can be chosen by commenting and uncommenting the
     #environment variables.
     #environment = [2, 7, 5, 1, 4, 3, 6, 0, 8]
-    #environment = [7, 8, 3, 4, 1, 5, 6, 0, 2]
-    environment = [3, 2, 4, 1, 5, 6, 7, 8, 0]
+    environment = [7, 8, 3, 4, 1, 5, 6, 0, 2]
+    #environment = [3, 2, 4, 1, 5, 6, 7, 8, 0]
     return environment
 
 

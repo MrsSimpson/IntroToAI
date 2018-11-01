@@ -13,31 +13,34 @@ def menu():
     #The function checks to make sure the user selected a valid option, and then calls the appropriate functions
     #according to the users choice. This is placed inside a while loop that continues to execute to until the user
     #chooses no 'n'.
-    choice = ''
-    play_game = True
-    while play_game:
-        print("       Welcome to Slider 8\n")
-        print("An AI agent will be provided to assist you with solving a Slider 8 Puzzle.\n")
-        print("First you must create a puzzle board.\n")
-        choice = input("Please select one of the following choices. \n"
+    environment = None
+    search_again = True
+    print("       Welcome to Slider 8\n")
+    print("An AI agent will be provided to assist you with solving a Slider 8 Puzzle.\n")
+    print("First you must create a puzzle board.\n")
+    choice = input("Please select one of the following choices. \n"
                        "1. Press 1 to create a completely random puzzle.\n"
-                       "2. Press 2 to choose the empty space for a random puzzle.")
-        while not choice in ('1', '2'):
-            print("You did not select a valid option, please select 1 or 2.")
-            choice = input("Please select one of the following choices. \n"
+                       "2. Press 2 to choose the empty space for a random puzzle.\n"
+                       "3. Press 3 to choose your own puzzle set up.")
+    while not choice in ('1', '2', '3'):
+        print("You did not select a valid option, please select 1 or 2.")
+        choice = input("Please select one of the following choices. \n"
                            "1. Create Random Puzzle.\n"
-                           "2. Create A Random Puzzle and pick a Starting Empty Space.\n")
+                           "2. Create A Random Puzzle and pick a Starting Empty Space.\n"
+                           "3. Create A Your Own Puzzle Setup.\n")
+    environment = get_user_input(choice)
+    user_search_choice(environment)
+    while search_again:
 
-        user_search_choice(get_user_input(choice))
-        print("\nWould you like to play again?\n")
+        print("\nWould you like to try a using a different search?\n")
         replay_choice = input("Y for Yes\nN for No\n")
         while not replay_choice in ('Y', 'N', 'y', 'n'):
             print("Please select either Y or N")
             replay_choice = input("Y for Yes\nN for No\n")
         if replay_choice in ('Y', 'y'):
-            print('\n' * 5)
+            user_search_choice(environment)
         if replay_choice in ('N', 'n'):
-            play_game = False
+            search_again = False
 
 
 def get_user_input(choice):
@@ -63,6 +66,21 @@ def get_user_input(choice):
         print("The Randomly Created Game with your choice of empty spot is: ")
         print_the_game(rand_environment)
         return user_environment
+
+    if choice == '3':
+        print("\nPlease select what numbers you want in each position of the board.\n"
+              "The empty position is represented with a 0.\n")
+        users_choice = []
+        for i in range(9):
+            position = input("Select a unique number 0-8 for the " + str(i+1) + " position on the board.")
+            while position in users_choice or position not in ('0', '1', '2', '3', '4', '5', '6', '7', '8'):
+                position = input("Please select a valid number that has not been chosen already.")
+
+            users_choice.append(int(position))
+
+        print("Your board is: ")
+        print_the_game(users_choice)
+        return users_choice
 
 
 def user_search_choice(environment):
