@@ -1,4 +1,5 @@
 """node class used for creating new node states"""
+#python does not have struct so I used a class.
 
 
 class Node():
@@ -20,13 +21,13 @@ class Node():
         return None
 
     def create_state_string(self):
-        """create string of integers found in the array for start_state"""
+        """create string from the integers found in the array for start_state. This enables faster searching in visited"""
         for number in self.start_state:
             self.state_string += str(number)
         return self.state_string
 
     def set_path(self, previous_node, new_spot):
-        """set the path of the open position"""
+        """set the path that has been taken to get to this particular state."""
         if not previous_node.path:
             self.path.append(str(previous_node.empty_spot) + " swapped for " + str(new_spot))
             return self.path

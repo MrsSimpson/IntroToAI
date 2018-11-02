@@ -5,7 +5,7 @@ import random
 
 
 def print_the_game(environment):
-    """function to print the state of the board as passed in"""
+    """function prints the state of the board with formatting when called."""
     print("-------------")
     print("|", environment[0], "|", environment[1], "|", environment[2], "|")
     print("|", environment[3], "|", environment[4], "|", environment[5], "|")
@@ -13,7 +13,10 @@ def print_the_game(environment):
     print("-------------")
 
 def create_random_environment():
-    """create a random puzzle board for the game"""
+    """create a random puzzle board for the game."""
+    #the function creates an array to hold a list of 9 integers. When the for loop begins, integer is appended to
+    #the list and then the array is shuffled randomly. This guarentees that each integer in the list is unique and
+    #that the only integers contained in the list are 0-8
     rand_environment = []
     for i in range(9):
         rand_environment.append(i)
@@ -24,6 +27,10 @@ def create_random_environment():
 
 def create_user_defined_environment(rand_environment, user_choice):
     """create a random environment with the users choice of the empty space"""
+    #The function first uses a for loop to find the empty position of the randomly created
+    #environment. The function then calls another function to swap the current empty position with the users choice
+    #of the empty spot. This ensures that the puzzle is still random but the user gets choice where their empty position
+    #is. The funciton then returns the environment.
     empty_position = 0
     for i in range(9):
         if rand_environment[i] == 0:
@@ -35,13 +42,17 @@ def create_user_defined_environment(rand_environment, user_choice):
 
 def create_starting_state():
     """Create the starting state of the puzzle."""
+    #the environment created is hard coded. Different versions can be chosen by commenting and uncommenting the
+    #environment variables.
     #environment = [2, 7, 5, 1, 4, 3, 6, 0, 8]
-    environment = [7, 8, 3, 4, 1, 5, 6, 0, 2]
+    #environment = [7, 8, 3, 4, 1, 5, 6, 0, 2]
+    environment = [3, 2, 4, 1, 5, 6, 7, 8, 0]
     return environment
 
 
 def find_starting_position(environment):
-    """Locate the starting position to begin the search"""
+    """Locates the starting position to begin the search"""
+    #the function locates the element that is == 0.
     for i in range(9):
         if environment[i] == 0:
             starting_point = i
@@ -50,7 +61,7 @@ def find_starting_position(environment):
 
 
 def check_goal_state(current_node):
-    """Check to see if the current node is the goal state"""
+    """Check to see if the current node's start state matches the goal state"""
     if current_node.start_state == [1, 2, 3, 4, 5, 6, 7, 8, 0]:
         return True
 
@@ -59,6 +70,8 @@ def check_goal_state(current_node):
 
 def check_visited(visited, new_state):
     """Check to see if the start has been visited already"""
+    #The funciton converts the new_state array into a string of characters.
+    #It then checks to see if string is already contained in the visited library and returns the appropriate boolean.
     new_state_string = ""
     for number in new_state:
         new_state_string += str(number)
@@ -70,7 +83,7 @@ def check_visited(visited, new_state):
 
 
 def add_to_visited(visited, new_state, counter):
-    """add the string of integers to the dictionary with the counter"""
+    """Convert add the string of integers to the dictionary along with the counter"""
     environment_string = ""
     for number in new_state:
         environment_string += str(number)
@@ -80,6 +93,7 @@ def add_to_visited(visited, new_state, counter):
 
 def swap_empty_position(new_state, empty_spot, new_empty_spot):
     """Swap the positions in the new environment"""
+    #the function takes swaps the empty_spot position with the new empty_spot position and returns a new_state.
     new_state[empty_spot], new_state[new_empty_spot] = \
         new_state[new_empty_spot], new_state[empty_spot]
     return new_state

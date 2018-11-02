@@ -10,6 +10,9 @@ from subpackages.node import Node
 
 def menu():
     """Give the user a choice on how to create the puzzle."""
+    #The function checks to make sure the user selected a valid option, and then calls the appropriate functions
+    #according to the users choice. This is placed inside a while loop that continues to execute to until the user
+    #chooses no 'n'.
     choice = ''
     play_game = True
     while play_game:
@@ -39,6 +42,8 @@ def menu():
 
 def get_user_input(choice):
     """do something with the users choice"""
+    #the function give the user choices on what type of random environment they want to create. It will check to make
+    #sure the user inputs valid choices and then call the apporpriate functions to create the environment.
     if choice == '1':
         rand_environment = create_random_environment()
         print("The Randomly Created Game is: ")
@@ -62,6 +67,9 @@ def get_user_input(choice):
 
 def user_search_choice(environment):
     """Menu for the user to decide which type of search they would like to perform"""
+    #Gives the user choices on which type of search they would like to perform. It checks to see if the user input
+    #valid. If it is, the appropriate functions are called to perform the search.
+
     print("\nYour AI agent can search for the solution to your puzzle by using one of "
           "the following search algorithms. ")
     print("\nPlease select which search you would like to perform.")
