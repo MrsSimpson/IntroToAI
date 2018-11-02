@@ -1,11 +1,12 @@
-"""File that contains the breadth first search for the slider puzzle. Uses the queue data structure to store nodes."""
+"""File that contains the breadth first search for the slider puzzle.
+ Uses the queue data structure to store nodes."""
 
 
 from __future__ import print_function
 import time
 from collections import deque
 from subpackages.solve_the_puzzle import check_goal_state, check_visited, add_to_visited, \
-    swap_empty_position, print_the_game
+    swap_empty_position, print_the_game, print_the_path
 from subpackages.node import Node
 
 
@@ -25,11 +26,13 @@ def set_glob_counter():
 
 def begin_breadth_first_search(initial_node, visited_map, start_time):
     """function to use breadth first search to solve the slider puzzle"""
-    #The function creates the queue with the initial node that is passed in to the function. While the queue is not
-    #empty, the node at the front of the queue is popped and the function checks to see if it contains the goal state.
-    #If the node does not contain the goal state, the function checks the top position, right position, bottom position,
-    #and the left position. If the solution is found, the results are printed to the screen. If the queue is empty and
-    #and the result was not found, a message is displayed saying that the state was not valid.
+    #The function creates the queue with the initial node that is passed in to the function.
+    #While the queue is notempty, the node at the front of the queue is popped and the
+    #function checks to see if it contains the goal state. If the node does not contain the
+    #goal state, the function checks the top position, right position, bottom position,
+    #and the left position. If the solution is found, the results are printed to the screen.
+    #If the queue is empty and the result was not found, a message is displayed saying that
+    #the state was not valid.
     initialize_global_counter()
     depth = 0
     queue = create_queue(initial_node)
@@ -43,7 +46,7 @@ def begin_breadth_first_search(initial_node, visited_map, start_time):
             move_to_left(current_node, visited_map, queue, depth)
 
         else:
-            print("The Solution was found: ")
+            print("The Solution using Breadth First Search was found: ")
             print_the_game(current_node.start_state)
             print("It took", "%s seconds to find the solution" % (time.clock() - start_time))
             the_string = ""
@@ -52,8 +55,7 @@ def begin_breadth_first_search(initial_node, visited_map, start_time):
             print(COUNTER, "nodes were produced before the solution was found")
             print("The depth of the solution was found at: ", current_node.depth)
             print("The solution was found at the", visited_map.get(the_string), "node")
-            for element in current_node.path:
-                print(element)
+            print(current_node.path)
             break
 
     if not queue:
@@ -80,10 +82,11 @@ def move_to_top(current_node, visited_map, queue, depth):
     """function moves the empty state up one position"""
     #The function checks to see if the move is valid (if it is on the board),
     #if the move left is valide, it will create a temporary new_state and it will
-    #call the function to swap the empty position with the left position. The new_state is returned and if
-    #that state has not been previously visited, the counter is incremented for nodes created and the node is put into
-    #the queue. This process is the same for each possible position: right, down, and left. The only change is
-    #math that is done to look at each position.
+    #call the function to swap the empty position with the left position. The new_state is
+    #returned and if that state has not been previously visited, the counter is incremented
+    #for nodes created and the node is put into the queue. This process is the same for each
+    #possible position: right, down, and left. The only change is math that is done to look
+    #at each position.
     if (current_node.empty_spot - 3) < 0:
         return
 

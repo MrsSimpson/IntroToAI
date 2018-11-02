@@ -12,6 +12,10 @@ def print_the_game(environment):
     print("|", environment[6], "|", environment[7], "|", environment[8], "|")
     print("-------------")
 
+def print_the_path(solution_path):
+
+    print(*solution_path, sep = "\n")
+
 def create_random_environment():
     """create a random puzzle board for the game."""
     #the function creates an array to hold a list of 9 integers. When the for loop begins, integer is appended to

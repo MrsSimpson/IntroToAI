@@ -10,7 +10,7 @@ class Node():
         self.empty_spot = None
         self.depth = 0
         self.heuristic = None
-        self.path = []
+        self.path = ""
 
     def find_empty_position(self):
         """find the empty position of the node's state"""
@@ -28,13 +28,15 @@ class Node():
 
     def set_path(self, previous_node, new_spot):
         """set the path that has been taken to get to this particular state."""
+        path_string = str(previous_node.empty_spot + 1) + " swapped for " + str(new_spot + 1) + ",\n"
         if not previous_node.path:
-            self.path.append(str(previous_node.empty_spot) + " swapped for " + str(new_spot))
+            self.path = path_string
             return self.path
 
 
-        self.path.append(str(previous_node.empty_spot) + " swapped for " + str(new_spot))
-        self.path.append(previous_node.path)
+        self.path = previous_node.path
+        self.path += path_string
+
         return self.path
 
     def calculate_misplaced_tiles(self):

@@ -1,3 +1,13 @@
+import time
+from subpackages.solve_the_puzzle import create_starting_state, print_the_game
+from subpackages.node import Node
+from subpackages.breadth_first_search import begin_breadth_first_search
+from subpackages.depth_first_search import begin_depth_first_search
+from subpackages.a_star_manhattan_distance import begin_a_star_manhattan_distance
+from subpackages.a_star_misplaced_tiles import begin_a_star_misplaced_tiles
+
+
+
     #This block sets up a visited dictionary to hold the visited states. It then starts the clock_time and creates the
     #initial environment to be used for the search. The initial start state is printed out and the a node is created
     #that stores the initial environments state. The empty position is then found and stored in the previously created
