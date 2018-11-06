@@ -3,7 +3,7 @@ from __future__ import print_function
 import time
 import heapq as Q
 from subpackages.solve_the_puzzle import check_goal_state, check_visited, add_to_visited, \
-     swap_empty_position, print_the_game
+     swap_empty_position, print_the_game, print_the_path
 from subpackages.node import Node
 
 
@@ -45,8 +45,7 @@ def begin_a_star_manhattan_distance(initial_node, visited_map, start_time):
             print(COUNTER, "nodes were produced before the solution was found")
             print("The depth of the solution was found at: ", current_node.depth)
             print("The solution was found at the", visited_map.get(the_string), "node")
-            for element in current_node.path:
-                print(element)
+            print(current_node.path)
             break
 
     if not queue:

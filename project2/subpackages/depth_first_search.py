@@ -50,7 +50,7 @@ def begin_depth_first_search(initial_node, visited_map, start_time):
             for number in current_node.start_state:
                 the_string += str(number)
             print(COUNTER, "nodes were produced before the solution was found")
-            print("The depth of the solution was found at: ", current_node.depth)
+            print("The depth of the solution was found at:", current_node.depth)
             print("The solution was found at the", visited_map.get(the_string), "node")
             break
 
@@ -81,7 +81,6 @@ def move_to_top(current_node, visited_map, stack, depth):
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
         new_node.depth = depth
-        new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         stack.append(new_node)
 
 
@@ -100,7 +99,6 @@ def move_to_right(current_node, visited_map, stack, depth):
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
         new_node.depth = depth
-        new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         stack.append(new_node)
 
 
@@ -119,7 +117,6 @@ def move_to_bottom(current_node, visited_map, stack, depth):
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
         new_node.depth = depth
-        new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         stack.append(new_node)
 
 
@@ -138,5 +135,4 @@ def move_to_left(current_node, visited_map, stack, depth):
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
         new_node.depth = depth
-        new_node.set_path = new_node.set_path(current_node, new_empty_spot)
         stack.append(new_node)
