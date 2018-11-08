@@ -7,7 +7,7 @@ from subpackages.solve_the_puzzle import check_goal_state, check_visited, add_to
 from subpackages.node import Node
 
 
-COUNTER = 1
+COUNTER = 0
 
 def initialize_global_counter():
     """Set the global counter back to zero"""
