@@ -15,7 +15,7 @@ COUNTER = 1
 def initialize_global_counter():
     """Set the global counter back to zero"""
     global COUNTER
-    COUNTER = 0
+    COUNTER = 1
 
 
 def set_glob_counter():

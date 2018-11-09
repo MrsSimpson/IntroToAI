@@ -46,12 +46,12 @@ class Node():
         for tile in range(9):
             if tile == 8:
                 if self.start_state[8] != 0:
-                    heuristic += 1
+                    continue
             else:
                 if self.start_state[tile] != (tile + 1):
                     heuristic += 1
 
-        self.heuristic = heuristic
+        self.heuristic = self.depth * heuristic
         return self.heuristic
 
     def calculate_manhattan_distance(self):
@@ -70,7 +70,7 @@ class Node():
                     heuristic += out_of_place
 
 
-        self.heuristic = heuristic
+        self.heuristic = self.depth * heuristic
         return self.heuristic
 
 def find_correct_position(value):

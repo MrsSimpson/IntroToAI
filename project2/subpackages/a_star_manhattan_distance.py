@@ -12,7 +12,7 @@ COUNTER = 1
 def initialize_global_counter():
     """Set the global counter back to zero"""
     global COUNTER
-    COUNTER = 0
+    COUNTER = 1
 
 def set_glob_counter():
     """increment the global counter"""
@@ -57,7 +57,7 @@ def begin_a_star_manhattan_distance(initial_node, visited_map, start_time):
 def create_queue(current_node):
     """add the node passed in to the queue"""
     queue = []
-    Q.heappush(queue, (current_node.heuristic, current_node.start_state, current_node))
+    Q.heappush(queue, (current_node.heuristic * COUNTER, COUNTER, current_node))
     Q.heapify(queue)
     return queue
 
