@@ -10,7 +10,7 @@ from subpackages.solve_the_puzzle import check_goal_state, check_visited, add_to
 from subpackages.node import Node
 
 
-COUNTER = 1
+COUNTER = 0
 
 def initialize_global_counter():
     """Set the global counter back to zero"""
@@ -55,6 +55,7 @@ def begin_breadth_first_search(initial_node, visited_map, start_time):
             print(COUNTER, "nodes were produced before the solution was found")
             print("The depth of the solution was found at: ", current_node.depth)
             print("The solution was found at the", visited_map.get(the_string), "node")
+            print()
             print(current_node.path)
             break
 
