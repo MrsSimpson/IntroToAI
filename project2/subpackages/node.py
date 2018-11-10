@@ -29,8 +29,10 @@ class Node():
     def set_path(self, previous_node, new_spot):
         """set the path that has been taken to get to this particular state."""
         path_string = str(previous_node.empty_spot + 1) + " swapped for " + str(new_spot + 1) + ",\n"
+        self.depth = previous_node.depth + 1
         if not previous_node.path:
             self.path = path_string
+            self.depth += 1
             return self.path
 
 
@@ -41,17 +43,13 @@ class Node():
 
     def calculate_misplaced_tiles(self):
         """calculates the number of tiles that are out of position and creates a heuristic from
-         this number."""
+         this number. The A star requires the heuristic to be added to with the nodes current depth"""
         heuristic = 0
         for tile in range(9):
-            if tile == 8:
-                if self.start_state[8] != 0:
-                    continue
-            else:
-                if self.start_state[tile] != (tile + 1):
-                    heuristic += 1
+            if self.start_state[tile] != (tile + 1):
+                heuristic += 1
 
-        self.heuristic = self.depth * heuristic
+        self.heuristic = self.depth + heuristic
         return self.heuristic
 
     def calculate_manhattan_distance(self):
@@ -70,7 +68,7 @@ class Node():
                     heuristic += out_of_place
 
 
-        self.heuristic = self.depth * heuristic
+        self.heuristic = self.depth + heuristic
         return self.heuristic
 
 def find_correct_position(value):
