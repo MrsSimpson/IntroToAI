@@ -73,8 +73,12 @@ def get_user_input(choice):
         users_choice = []
         for i in range(9):
             position = input("Select a unique number 0-8 for the " + str(i+1) + " position on the board.")
-            while int(position) in users_choice or position not in ('0', '1', '2', '3', '4', '5', '6', '7', '8'):
-                position = input("Please select a valid number that has not been chosen already.")
+            while position not in ('0', '1', '2', '3', '4', '5', '6', '7', '8'):
+                position = input ("Please select a valid number between 0 - 8")
+
+            if int(position) in users_choice:
+                while int(position) in users_choice:
+                    position = input("Please select a valid number that has not been chosen already.")
 
             users_choice.append(int(position))
 
