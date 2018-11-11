@@ -10,7 +10,7 @@ class Node():
         self.empty_spot = None
         self.depth = 0
         self.heuristic = None
-        self.path = ""
+        self.path = []
 
     def find_empty_position(self):
         """find the empty position of the node's state"""
@@ -26,24 +26,31 @@ class Node():
             self.state_string += str(number)
         return self.state_string
 
+    def set_depth(self, previous_node):
+        """set the depth of the current node by adding to the passed in nodes depth"""
+        if not previous_node.depth:
+            self.depth = 1
+            return self.depth
+        else:
+            self.depth = previous_node.depth + 1
+            return self.depth
+
     def set_path(self, previous_node, new_spot):
         """set the path that has been taken to get to this particular state."""
         path_string = str(previous_node.empty_spot + 1) + " swapped for " + str(new_spot + 1) + ",\n"
-        self.depth = previous_node.depth + 1
         if not previous_node.path:
-            self.path = path_string
-            self.depth += 1
+            self.path.append(path_string)
             return self.path
 
 
         self.path = previous_node.path
-        self.path += path_string
+        self.path.append(path_string)
 
         return self.path
 
     def calculate_misplaced_tiles(self):
-        """calculates the number of tiles that are out of position and creates a heuristic from
-         this number. The A star requires the heuristic to be added to with the nodes current depth"""
+        """calculates the number of tiles that are out of position and creates a heuristic from this number. """
+        #The A star requires the heuristic to be added to with the nodes current depth
         heuristic = 0
         for tile in range(9):
             if self.start_state[tile] != (tile + 1):
