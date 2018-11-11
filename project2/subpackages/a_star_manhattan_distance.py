@@ -84,6 +84,7 @@ def move_to_top(current_node, visited_map, queue, depth):
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
         new_node.set_path = new_node.set_path(current_node, new_empty_spot)
+        new_node.depth = new_node.set_depth(current_node)
         new_node.heuristic = new_node.calculate_manhattan_distance()
         Q.heappush(queue, (new_node.heuristic, new_node.start_state, new_node))
 
@@ -103,6 +104,7 @@ def move_to_right(current_node, visited_map, queue, depth):
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
         new_node.set_path = new_node.set_path(current_node, new_empty_spot)
+        new_node.depth = new_node.set_depth(current_node)
         new_node.heuristic =new_node.calculate_manhattan_distance()
         Q.heappush(queue, (new_node.heuristic, new_node.start_state, new_node))
 
@@ -122,6 +124,7 @@ def move_to_bottom(current_node, visited_map, queue, depth):
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
         new_node.set_path = new_node.set_path(current_node, new_empty_spot)
+        new_node.depth = new_node.set_depth(current_node)
         new_node.heuristic = new_node.calculate_manhattan_distance()
         Q.heappush(queue, (new_node.heuristic, new_node.start_state, new_node))
 
@@ -141,5 +144,6 @@ def move_to_left(current_node, visited_map, queue, depth):
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
         new_node.set_path = new_node.set_path(current_node, new_empty_spot)
+        new_node.depth = new_node.set_depth(current_node)
         new_node.heuristic =new_node.calculate_manhattan_distance()
         Q.heappush(queue, (new_node.heuristic, new_node.start_state, new_node))
