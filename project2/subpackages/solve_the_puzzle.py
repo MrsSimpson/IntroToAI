@@ -13,8 +13,24 @@ def print_the_game(environment):
     print("-------------")
 
 def print_the_path(solution_path):
-
-    print(*solution_path, sep = "\n")
+    print("\nThe path to the solution is:")
+    while solution_path:
+        path1 = ""
+        path2 = ""
+        path3 = ""
+        path4 = ""
+        path1 = solution_path.pop(0)
+        path1 = path1.strip("\n")
+        if solution_path:
+            path2 = solution_path.pop(0)
+            path2 = path2.strip("\n")
+            if solution_path:
+                path3 = solution_path.pop(0)
+                path3 = path3.strip("\n")
+                if solution_path:
+                    path4 = solution_path.pop(0)
+                    path4 = path4.strip("\n")
+        print(path1 + " " + path2 + " " + path3 + " " + path4)
 
 def create_random_environment():
     """create a random puzzle board for the game."""
