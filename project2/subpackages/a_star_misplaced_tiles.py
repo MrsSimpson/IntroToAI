@@ -44,12 +44,7 @@ def begin_a_star_misplaced_tiles(initial_node, visited_map, start_time):
             print(COUNTER, "nodes were produced before the solution was found")
             print("The depth of the solution was found at: ", current_node.depth)
             print("The solution was found at the", visited_map.get(the_string), "node")
-            path_count = 0
-            for i in range(len(current_node.path)):
-                print(current_node.path[i])
-
-
-
+            print_the_path(current_node.path)
             break
 
     if not queue:
