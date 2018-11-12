@@ -29,10 +29,10 @@ def begin_a_star_misplaced_tiles(initial_node, visited_map, start_time):
     while queue:  # while the queue still contains elements
         current_node = pop_from_queue(queue)
         if not check_goal_state(current_node):  # if goal state was not found
-            move_to_top(current_node, visited_map, queue, depth)
-            move_to_right(current_node, visited_map, queue, depth)
-            move_to_bottom(current_node, visited_map, queue, depth)
-            move_to_left(current_node, visited_map, queue, depth)
+            move_to_top(current_node, visited_map, queue)
+            move_to_right(current_node, visited_map, queue)
+            move_to_bottom(current_node, visited_map, queue)
+            move_to_left(current_node, visited_map, queue)
 
         else:
             print("The Solution was found: ")
@@ -68,7 +68,7 @@ def pop_from_queue(queue):
     return new_current
 
 
-def move_to_top(current_node, visited_map, queue, depth):
+def move_to_top(current_node, visited_map, queue):
     """function moves the empty state up one position"""
     if (current_node.empty_spot - 3) < 0:
         return
@@ -88,7 +88,7 @@ def move_to_top(current_node, visited_map, queue, depth):
         Q.heappush(queue, (new_node.heuristic, COUNTER, new_node))
 
 
-def move_to_right(current_node, visited_map, queue, depth):
+def move_to_right(current_node, visited_map, queue):
     """function moves the empty state right one position"""
     if ((current_node.empty_spot + 1) % 3) == 0:
         return
@@ -108,7 +108,7 @@ def move_to_right(current_node, visited_map, queue, depth):
         Q.heappush(queue, (new_node.heuristic, COUNTER, new_node))
 
 
-def move_to_bottom(current_node, visited_map, queue, depth):
+def move_to_bottom(current_node, visited_map, queue):
     """function moves the empty state down one position"""
     if (current_node.empty_spot + 3) > 8:
         return
@@ -128,7 +128,7 @@ def move_to_bottom(current_node, visited_map, queue, depth):
         Q.heappush(queue, (new_node.heuristic, COUNTER, new_node))
 
 
-def move_to_left(current_node, visited_map, queue, depth):
+def move_to_left(current_node, visited_map, queue):
     """function moves the empty state left one position if possible."""
     if (current_node.empty_spot % 3) == 0:
         return

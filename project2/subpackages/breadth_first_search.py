@@ -40,10 +40,10 @@ def begin_breadth_first_search(initial_node, visited_map, start_time):
         current_node = pop_from_queue(queue)
         if not check_goal_state(current_node):  # if goal state was not found
             depth += 1
-            move_to_top(current_node, visited_map, queue, depth)
-            move_to_right(current_node, visited_map, queue, depth)
-            move_to_bottom(current_node, visited_map, queue, depth)
-            move_to_left(current_node, visited_map, queue, depth)
+            move_to_top(current_node, visited_map, queue)
+            move_to_right(current_node, visited_map, queue)
+            move_to_bottom(current_node, visited_map, queue)
+            move_to_left(current_node, visited_map, queue)
 
         else:
             print("The Solution using Breadth First Search was found: ")
@@ -78,7 +78,7 @@ def pop_from_queue(queue):
     return popped_node
 
 
-def move_to_top(current_node, visited_map, queue, depth):
+def move_to_top(current_node, visited_map, queue):
     """function moves the empty state up one position"""
     #The function checks to see if the move is valid (if it is on the board),
     #if the move left is valide, it will create a temporary new_state and it will
@@ -104,7 +104,7 @@ def move_to_top(current_node, visited_map, queue, depth):
         queue.append(new_node)
 
 
-def move_to_right(current_node, visited_map, queue, depth):
+def move_to_right(current_node, visited_map, queue):
     """function moves the empty state right one position"""
     if ((current_node.empty_spot + 1) % 3) == 0:
         return
@@ -123,7 +123,7 @@ def move_to_right(current_node, visited_map, queue, depth):
         queue.append(new_node)
 
 
-def move_to_bottom(current_node, visited_map, queue, depth):
+def move_to_bottom(current_node, visited_map, queue):
     """function moves the empty state down one position"""
     if (current_node.empty_spot + 3) > 8:
         return
@@ -142,7 +142,7 @@ def move_to_bottom(current_node, visited_map, queue, depth):
         queue.append(new_node)
 
 
-def move_to_left(current_node, visited_map, queue, depth):
+def move_to_left(current_node, visited_map, queue):
     """function moves the empty state left one position if possible."""
     if (current_node.empty_spot % 3) == 0:
         return

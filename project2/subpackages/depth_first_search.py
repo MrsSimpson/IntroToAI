@@ -37,10 +37,10 @@ def begin_depth_first_search(initial_node, visited_map, start_time):
         current_node = pop_from_queue(stack)
         if not check_goal_state(current_node):  # if goal state was not found
             depth += 1
-            move_to_top(current_node, visited_map, stack, depth)
-            move_to_right(current_node, visited_map, stack, depth)
-            move_to_bottom(current_node, visited_map, stack, depth)
-            move_to_left(current_node, visited_map, stack, depth)
+            move_to_top(current_node, visited_map, stack)
+            move_to_right(current_node, visited_map, stack)
+            move_to_bottom(current_node, visited_map, stack)
+            move_to_left(current_node, visited_map, stack)
 
         else:
             print("The Solution was found: ")
@@ -66,7 +66,7 @@ def pop_from_queue(stack):
     return popped_node
 
 
-def move_to_top(current_node, visited_map, stack, depth):
+def move_to_top(current_node, visited_map, stack):
     """function moves the empty state up one position"""
     if (current_node.empty_spot - 3) < 0:
         return
@@ -84,7 +84,7 @@ def move_to_top(current_node, visited_map, stack, depth):
         stack.append(new_node)
 
 
-def move_to_right(current_node, visited_map, stack, depth):
+def move_to_right(current_node, visited_map, stack):
     """function moves the empty state right one position"""
     if ((current_node.empty_spot + 1) % 3) == 0:
         return
@@ -102,7 +102,7 @@ def move_to_right(current_node, visited_map, stack, depth):
         stack.append(new_node)
 
 
-def move_to_bottom(current_node, visited_map, stack, depth):
+def move_to_bottom(current_node, visited_map, stack):
     """function moves the empty state down one position"""
     if (current_node.empty_spot + 3) > 8:
         return
@@ -120,7 +120,7 @@ def move_to_bottom(current_node, visited_map, stack, depth):
         stack.append(new_node)
 
 
-def move_to_left(current_node, visited_map, stack, depth):
+def move_to_left(current_node, visited_map, stack):
     """function moves the empty state left one position if possible."""
     if (current_node.empty_spot % 3) == 0:
         return
