@@ -42,11 +42,10 @@ class Node():
             self.path.append(path_string)
             return self.path
 
-
-        self.path = previous_node.path
-        self.path.append(path_string)
-
-        return self.path
+        else:
+            self.path += previous_node.path
+            self.path.append(path_string)
+            return self.path
 
     def calculate_misplaced_tiles(self):
         """calculates the number of tiles that are out of position and creates a heuristic from this number. """
