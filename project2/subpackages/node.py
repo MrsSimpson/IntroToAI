@@ -28,7 +28,7 @@ class Node():
 
     def set_depth(self, previous_node):
         """set the depth of the current node by adding to the passed in nodes depth"""
-        if not previous_node.depth:
+        if previous_node.depth == 0:
             self.depth = 1
             return self.depth
         else:
@@ -37,7 +37,7 @@ class Node():
 
     def set_path(self, previous_node, new_spot):
         """set the path that has been taken to get to this particular state."""
-        path_string = str(previous_node.empty_spot + 1) + " swapped for " + str(new_spot + 1) + ",\n"
+        path_string = str(previous_node.empty_spot + 1) + " swapped for " + str(new_spot + 1) + ", "
         if not previous_node.path:
             self.path.append(path_string)
             return self.path

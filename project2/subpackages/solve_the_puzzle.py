@@ -2,6 +2,7 @@
 
 from __future__ import print_function
 import random
+import csv
 
 
 def print_the_game(environment):
@@ -117,3 +118,17 @@ def swap_empty_position(new_state, empty_spot, new_empty_spot):
     new_state[empty_spot], new_state[new_empty_spot] = \
         new_state[new_empty_spot], new_state[empty_spot]
     return new_state
+
+
+
+def write_to_file(node, data_structure, COUNTER, timer, search_type):
+    with open('report.csv', 'a', newline='') as file:
+        line_write = csv.writer(file)
+        line_write.writerow(['Search_type', 'Start State', 'Solution Found', 'Depth', 'Solution Path', 'Nodes Expanded', 'Search Time'])
+    if data_structure:
+        line_write.writerow([search_type, node.start_state, 'True', print_the_path(node.path), COUNTER, timer])
+
+
+    else:
+        line_write.writerow([search_type, node.start_state, 'False'])
+

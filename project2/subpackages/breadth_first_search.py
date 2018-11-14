@@ -8,6 +8,7 @@ from collections import deque
 from subpackages.solve_the_puzzle import check_goal_state, check_visited, add_to_visited, \
     swap_empty_position, print_the_game, print_the_path
 from subpackages.node import Node
+import csv
 
 
 COUNTER = 0
@@ -36,6 +37,7 @@ def begin_breadth_first_search(initial_node, visited_map, start_time):
     initialize_global_counter()
     depth = 0
     queue = create_queue(initial_node)
+    current_node = initial_node
     while queue:  # while the queue still contains elements
         current_node = pop_from_queue(queue)
         if not check_goal_state(current_node):  # if goal state was not found
@@ -46,9 +48,14 @@ def begin_breadth_first_search(initial_node, visited_map, start_time):
             move_to_left(current_node, visited_map, queue)
 
         else:
+            my_timer = str((time.clock() - start_time))
+            with open('report.csv', 'a', newline='') as file:
+                line_write = csv.writer(file)
+                line_write.writerow(['BFS', initial_node.start_state, 'True', current_node.depth, current_node.path, COUNTER, my_timer])
+
             print("The Solution using Breadth First Search was found: ")
             print_the_game(current_node.start_state)
-            print("It took", "%s seconds to find the solution" % (time.clock() - start_time))
+            print("It took", "%s seconds to find the solution" % (my_timer))
             the_string = ""
             for number in current_node.start_state:
                 the_string += str(number)
@@ -59,6 +66,11 @@ def begin_breadth_first_search(initial_node, visited_map, start_time):
             break
 
     if not queue:
+        my_timer = str((time.clock() - start_time))
+        with open('report.csv', 'a', newline='') as file:
+            line_write = csv.writer(file)
+            line_write.writerow(['BFS', initial_node.start_state, 'False', current_node.depth, '', COUNTER, my_timer])
+
         print("Puzzle was not valid. No solution could be found.")
         print(COUNTER, "nodes were produced.")
         print("%s seconds to exhaust all possibilities" % (time.clock() - start_time))

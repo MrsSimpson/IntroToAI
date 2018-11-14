@@ -5,6 +5,7 @@ import time
 from subpackages.solve_the_puzzle import check_goal_state, check_visited, add_to_visited, \
     swap_empty_position, print_the_game
 from subpackages.node import Node
+import csv
 
 
 COUNTER = 0
@@ -32,17 +33,21 @@ def begin_depth_first_search(initial_node, visited_map, start_time):
     stack = []
     initialize_global_counter()
     stack.append(initial_node)
-    depth = 0
+    current_node = initial_node
     while stack:  # while the queue still contains elements
         current_node = pop_from_queue(stack)
         if not check_goal_state(current_node):  # if goal state was not found
-            depth += 1
             move_to_top(current_node, visited_map, stack)
             move_to_right(current_node, visited_map, stack)
             move_to_bottom(current_node, visited_map, stack)
             move_to_left(current_node, visited_map, stack)
 
         else:
+            my_timer = str((time.clock() - start_time))
+            with open('report.csv', 'a', newline='') as file:
+                line_write = csv.writer(file)
+                line_write.writerow(
+                    ['DFS', initial_node.start_state, 'True', current_node.depth, '', COUNTER, my_timer])
             print("The Solution was found: ")
             print_the_game(current_node.start_state)
             print("It took", "%s seconds to find the solution" % (time.clock() - start_time))
@@ -55,6 +60,10 @@ def begin_depth_first_search(initial_node, visited_map, start_time):
             break
 
     if not stack:
+        my_timer = str((time.clock() - start_time))
+        with open('report.csv', 'a', newline='') as file:
+            line_write = csv.writer(file)
+            line_write.writerow(['DFS', initial_node.start_state, 'False', current_node.depth, '', COUNTER, my_timer])
         print("Puzzle was not valid. No solution could be found.")
         print(COUNTER, "nodes were produced.")
         print("%s seconds to exhaust all possibilities" % (time.clock() - start_time))
