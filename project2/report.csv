@@ -1,0 +1,94 @@
+Search_type,Start State,Solution Found,Depth,Nodes Expanded,Search Time,Solution Path
+BFS,"[7, 8, 5, 2, 4, 1, 3, 0, 6]",FALSE,31,181440,3.924894084,
+DFS,"[7, 8, 5, 2, 4, 1, 3, 0, 6]",FALSE,1,181440,2.88067802,
+A* Misplaced Tiles,"[7, 8, 5, 2, 4, 1, 3, 0, 6]",FALSE,30,181440,4.402434843,
+A* Manhattan Distance,"[7, 8, 5, 2, 4, 1, 3, 0, 6]",FALSE,30,181440,5.376699357,
+,,,,,,
+,,,,,,
+BFS,"[0, 3, 4, 5, 6, 7, 8, 2, 1]",FALSE,31,181440,3.471148665,
+DFS,"[0, 3, 4, 5, 6, 7, 8, 2, 1]",FALSE,1,181440,2.955249813,
+A* Misplaced Tiles,"[0, 3, 4, 5, 6, 7, 8, 2, 1]",FALSE,32,181440,4.414914438,
+A* Manhattan Distance,"[0, 3, 4, 5, 6, 7, 8, 2, 1]",FALSE,28,181440,5.649405907,
+,,,,,,
+BFS,"[4, 3, 6, 8, 1, 7, 2, 0, 5]",TRUE,19,51323,1.028549113,"['8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 3, ', '3 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 7, ', '7 swapped for 8, ', '8 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ']"
+DFS,"[4, 3, 6, 8, 1, 7, 2, 0, 5]",TRUE,65369,151263,2.284568269,
+A* Misplaced Tiles,"[4, 3, 6, 8, 1, 7, 2, 0, 5]",TRUE,19,3705,0.105340361,"['8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 3, ', '3 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 7, ', '7 swapped for 8, ', '8 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ']"
+A* Manhattan Distance,"[4, 3, 6, 8, 1, 7, 2, 0, 5]",TRUE,19,551,0.013911298,"['8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 3, ', '3 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 7, ', '7 swapped for 8, ', '8 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ']"
+,,,,,,
+BFS,"[4, 3, 1, 2, 0, 5, 6, 7, 8]",FALSE,30,181440,2.830970998,
+DFS,"[4, 3, 1, 2, 0, 5, 6, 7, 8]",FALSE,1,181440,2.382237328,
+A* Misplaced Tiles,"[4, 3, 1, 2, 0, 5, 6, 7, 8]",FALSE,30,181440,3.536945749,
+A* Manhattan Distance,"[4, 3, 1, 2, 0, 5, 6, 7, 8]",FALSE,30,181440,4.420362335,
+,,,,,,
+,,,,,,
+,,,,,,
+BFS,"[0, 4, 2, 8, 1, 6, 3, 5, 7]",FALSE,31,181440,2.783622097,
+DFS,"[0, 4, 2, 8, 1, 6, 3, 5, 7]",FALSE,1,181440,2.395543786,
+A* Misplaced Tiles,"[0, 4, 2, 8, 1, 6, 3, 5, 7]",FALSE,30,181440,3.582126552,
+A* Manhattan Distance,"[0, 4, 2, 8, 1, 6, 3, 5, 7]",FALSE,30,181440,4.386839003,
+,,,,,,
+,,,,,,
+BFS,"[3, 0, 6, 8, 7, 1, 5, 4, 2]",TRUE,25,167788,2.417670386,"['2 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ', '9 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 2, ', '2 swapped for 1, ', '1 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 3, ', '3 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ']"
+DFS,"[3, 0, 6, 8, 7, 1, 5, 4, 2]",TRUE,18891,34007,0.323441522,
+A* Misplaced Tiles,"[3, 0, 6, 8, 7, 1, 5, 4, 2]",TRUE,25,42209,0.645347441,"['2 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 7, ', '7 swapped for 8, ', '8 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ', '9 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 2, ', '2 swapped for 1, ', '1 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 3, ', '3 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ']"
+A* Manhattan Distance,"[3, 0, 6, 8, 7, 1, 5, 4, 2]",TRUE,25,3808,0.072354313,"['2 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ', '9 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 2, ', '2 swapped for 1, ', '1 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 3, ', '3 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ']"
+,,,,,,
+BFS,"[0, 2, 6, 4, 8, 5, 1, 7, 3]",TRUE,24,154312,2.219178098,"['1 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 3, ', '3 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 3, ', '3 swapped for 6, ', '6 swapped for 9, ']"
+DFS,"[0, 2, 6, 4, 8, 5, 1, 7, 3]",TRUE,66014,131541,1.376305085,
+A* Misplaced Tiles,"[0, 2, 6, 4, 8, 5, 1, 7, 3]",TRUE,24,28179,0.419687965,"['1 swapped for 4, ', '4 swapped for 7, ', '7 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 7, ', '7 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 3, ', '3 swapped for 2, ', '2 swapped for 1, ', '1 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ']"
+A* Manhattan Distance,"[0, 2, 6, 4, 8, 5, 1, 7, 3]",TRUE,24,5221,0.095366641,"['1 swapped for 4, ', '4 swapped for 7, ', '7 swapped for 8, ', '8 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 7, ', '7 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 3, ', '3 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 3, ', '3 swapped for 6, ', '6 swapped for 9, ']"
+,,,,,,
+BFS,"[2, 1, 0, 6, 8, 7, 4, 3, 5]",TRUE,26,170988,2.490635069,"['3 swapped for 6, ', '6 swapped for 9, ', '9 swapped for 8, ', '8 swapped for 5, ', '5 swapped for 2, ', '2 swapped for 1, ', '1 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 3, ', '3 swapped for 2, ', '2 swapped for 1, ', '1 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ', '9 swapped for 8, ', '8 swapped for 5, ', '5 swapped for 2, ', '2 swapped for 3, ', '3 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 7, ', '7 swapped for 8, ', '8 swapped for 9, ']"
+DFS,"[2, 1, 0, 6, 8, 7, 4, 3, 5]",TRUE,53900,167437,1.869649881,
+A* Misplaced Tiles,"[2, 1, 0, 6, 8, 7, 4, 3, 5]",TRUE,26,53697,0.846556171,"['3 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 3, ', '3 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 7, ', '7 swapped for 8, ', '8 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ']"
+A* Manhattan Distance,"[2, 1, 0, 6, 8, 7, 4, 3, 5]",TRUE,26,5673,0.105770188,"['3 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 3, ', '3 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 9, ', '9 swapped for 6, ', '6 swapped for 5, ', '5 swapped for 4, ', '4 swapped for 7, ', '7 swapped for 8, ', '8 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ']"
+,,,,,,
+,,,,,,
+BFS,"[3, 1, 5, 7, 6, 4, 0, 8, 2]",FALSE,31,181440,2.789354438,
+DFS,"[3, 1, 5, 7, 6, 4, 0, 8, 2]",FALSE,1,181440,2.400922547,
+A* Misplaced Tiles,"[3, 1, 5, 7, 6, 4, 0, 8, 2]",FALSE,31,181440,3.58851035,
+A* Manhattan Distance,"[3, 1, 5, 7, 6, 4, 0, 8, 2]",FALSE,30,181440,4.516754555,
+,,,,,,
+,,,,,,
+BFS,"[6, 7, 2, 4, 1, 8, 0, 5, 3]",TRUE,22,100384,1.335753611,"['7 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ', '9 swapped for 8, ', '8 swapped for 5, ', '5 swapped for 2, ', '2 swapped for 3, ', '3 swapped for 6, ', '6 swapped for 9, ']"
+DFS,"[6, 7, 2, 4, 1, 8, 0, 5, 3]",TRUE,51004,169562,1.929571216,
+A* Misplaced Tiles,"[6, 7, 2, 4, 1, 8, 0, 5, 3]",TRUE,22,12057,0.171211322,"['7 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ', '9 swapped for 8, ', '8 swapped for 5, ', '5 swapped for 2, ', '2 swapped for 3, ', '3 swapped for 6, ', '6 swapped for 9, ']"
+A* Manhattan Distance,"[6, 7, 2, 4, 1, 8, 0, 5, 3]",TRUE,22,1223,0.02296176,"['7 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 1, ', '1 swapped for 2, ', '2 swapped for 5, ', '5 swapped for 8, ', '8 swapped for 7, ', '7 swapped for 4, ', '4 swapped for 5, ', '5 swapped for 6, ', '6 swapped for 9, ', '9 swapped for 8, ', '8 swapped for 5, ', '5 swapped for 2, ', '2 swapped for 3, ', '3 swapped for 6, ', '6 swapped for 9, ']"
+,,,,,,
+,,,,,,
+,,,Avg Depth,Avg Nodes,Avg Time,
+Average  BFS,,,27,155199.5,2.529177656,
+Average  DFS,,,25518.3,156101,2.079816747,
+Avg A* Misplaced Tiles,,,26.9,104704.7,2.171307519,
+Avg A* Manhattan Distance,,,26.4,92367.6,2.466042536,
+"The Averages of these searches include valid puzzles as well as invalid puzzles. 
+*The breadth first search (BFS) has a similar depth to the A* searches, but the node count is considerably higher which shows that the breadth first search is definantly not memory friendly. 
+* The DFS has an extreamly high depth due to the search expanding as far as possible before traversing down the next possible path. The node count is also pretty high. This result could be differnt with other random puzzles. The average search time for depth first was slightly better than the average time for the breadth first search.
+* The A* misplaced tiles had a very similar depth to the BFS, which is expected. The average nodes was a good bit lower. This average would have been even lower if the invalid puzzles would not have been a factor. The average time was slightly faster, and again this is due to the invalid solutions being a factor in some of the searches.
+* The A* manhattan distance had a slighlty better average depth than the breadth first search and A* misplaced tiles search. The average nodes expanded was the least of all the search types, which is definently expected. The average search time fot the A* manhattan was slightly higher than the misplaced tiles search which came as a suprise, but then I considered that this was again due to the invalid solutions being a factor in the averages.",,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,Avergae Depth for Valid Puzzles,Average Node Count For Valid Puzzles,Average Time for Valid Puzzles,
+Average BFS,,,23.2,128959,1.898357255,
+Average DFS,,,51035.6,130762,1.556707195,
+Avg A* Misplaced Tiles,,,23.2,27969.4,0.437628652,
+AvgA* Manhattan Distance,,,23.2,3295.2,0.06207284,
+"The Averages of these searches includes only valid puzzle solutions. The invalid solutions were not added into the calculations. 
+*The breadth first search A* misplaced and A* manhattan searches all have the same average depth which is expected. The node count for the depth first search is considerably higher than all of the other searches, which again is due to the stack data structure causeing the search to traverse all the way down one branch before moving to the next branch. 
+*The average node count for the breadth first seach shows that this types search is definently not memory friendly. Even though only valid solutions were factors in these averages, breadth first search still expanded A LOT of nodes to find the solution. This is due to the queue data structure. 
+*The average node count for the A* misplaced tiles is quite a bit lower than the node count for BFS or DFS. This is due to the heuristic being used in cooralation with the depth of each node. This value is used to add nodes to the priority queue. The lower the heuristic value, the better chance at finding a solution. The search time is considerably less and agian this is due to the heuristic being used.
+* The average node count for the A* manhattan distance is much, much lower than all of the other searches. This is completely because the A* manhattan searches finds the optimal solution with the depth of the node added to the heuristic value. The heuristic calculates how many positions the current tile is out of place and then addes that number to the total hueristc for that state. This total heuristic value for the state is then added with the depth to that point and this value is used to determine where the node should be placed in the priority queue. This ensures that the node with the lowest heuristic will be chosen every time. The search time for the A* manhattan distance is incredibly fast. The optimal solution is found faster, due to the heuristic being more precise than it was for the A* misplaced tiles. ",,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
