@@ -36,11 +36,6 @@ def begin_a_star_misplaced_tiles(initial_node, visited_map, start_time):
             move_to_left(current_node, visited_map, queue)
 
         else:
-            my_timer = str((time.clock() - start_time))
-            with open('report.csv', 'a', newline='') as file:
-                line_write = csv.writer(file)
-                line_write.writerow(['A* Misplaced Tiles', initial_node.start_state, 'True', current_node.depth,
-                                     current_node.path, COUNTER, my_timer])
             print("The Solution was found: ")
             print_the_game(current_node.start_state)
             print("It took", "%s seconds to find the solution" % (time.clock() - start_time))
@@ -54,10 +49,6 @@ def begin_a_star_misplaced_tiles(initial_node, visited_map, start_time):
             break
 
     if not queue:
-        my_timer = str((time.clock() - start_time))
-        with open('report.csv', 'a', newline='') as file:
-            line_write = csv.writer(file)
-            line_write.writerow(['A* Misplaced Tiles', initial_node.start_state, 'False', current_node.depth, '', COUNTER, my_timer])
         print("Puzzle was not valid. No solution could be found.")
         print(COUNTER, "nodes were produced.")
         print("%s seconds to exhaust all possibilities" % (time.clock() - start_time))

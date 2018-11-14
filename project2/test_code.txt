@@ -52,3 +52,51 @@ from subpackages.a_star_misplaced_tiles import begin_a_star_misplaced_tiles
     current_node.create_state_string()
     visited_map.update({current_node.state_string: 1})
     begin_a_star_manhattan_distance(current_node, visited_map, start_time)
+
+
+                my_timer = str((time.clock() - start_time))
+            with open('report.csv', 'a', newline='') as file:
+                line_write = csv.writer(file)
+                line_write.writerow(['A* Manhattan Distance', initial_node.start_state, 'True', current_node.depth,
+                                     current_node.path, COUNTER, my_timer])
+
+        my_timer = str((time.clock() - start_time))
+        with open('report.csv', 'a', newline='') as file:
+            line_write = csv.writer(file)
+            line_write.writerow(['A* Manhattan Distance', initial_node.start_state, 'False', current_node.depth, '', COUNTER, my_timer])
+
+
+                    my_timer = str((time.clock() - start_time))
+            with open('report.csv', 'a', newline='') as file:
+                line_write = csv.writer(file)
+                line_write.writerow(['A* Misplaced Tiles', initial_node.start_state, 'True', current_node.depth,
+                                     current_node.path, COUNTER, my_timer])
+
+                         my_timer = str((time.clock() - start_time))
+        with open('report.csv', 'a', newline='') as file:
+            line_write = csv.writer(file)
+            line_write.writerow(['A* Misplaced Tiles', initial_node.start_state, 'False', current_node.depth, '', COUNTER, my_timer])
+
+
+                        my_timer = str((time.clock() - start_time))
+            with open('report.csv', 'a', newline='') as file:
+                line_write = csv.writer(file)
+                line_write.writerow(['BFS', initial_node.start_state, 'True', current_node.depth, current_node.path, COUNTER, my_timer])
+
+       my_timer = str((time.clock() - start_time))
+        with open('report.csv', 'a', newline='') as file:
+            line_write = csv.writer(file)
+            line_write.writerow(['BFS', initial_node.start_state, 'False', current_node.depth, '', COUNTER, my_timer])
+
+            my_timer = str((time.clock() - start_time))
+            with open('report.csv', 'a', newline='') as file:
+                line_write = csv.writer(file)
+                line_write.writerow(
+                    ['DFS', initial_node.start_state, 'True', current_node.depth, '', COUNTER, my_timer])
+
+                            my_timer = str((time.clock() - start_time))
+        with open('report.csv', 'a', newline='') as file:
+            line_write = csv.writer(file)
+            line_write.writerow(['DFS', initial_node.start_state, 'False', current_node.depth, '', COUNTER, my_timer])
+
+
