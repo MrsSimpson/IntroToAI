@@ -62,10 +62,11 @@ Average  DFS,,,25518.3,156101,2.079816747,
 Avg A* Misplaced Tiles,,,26.9,104704.7,2.171307519,
 Avg A* Manhattan Distance,,,26.4,92367.6,2.466042536,
 "The Averages of these searches include valid puzzles as well as invalid puzzles. 
-*The breadth first search (BFS) has a similar depth to the A* searches, but the node count is considerably higher which shows that the breadth first search is definantly not memory friendly. 
-* The DFS has an extreamly high depth due to the search expanding as far as possible before traversing down the next possible path. The node count is also pretty high. This result could be differnt with other random puzzles. The average search time for depth first was slightly better than the average time for the breadth first search.
-* The A* misplaced tiles had a very similar depth to the BFS, which is expected. The average nodes was a good bit lower. This average would have been even lower if the invalid puzzles would not have been a factor. The average time was slightly faster, and again this is due to the invalid solutions being a factor in some of the searches.
-* The A* manhattan distance had a slighlty better average depth than the breadth first search and A* misplaced tiles search. The average nodes expanded was the least of all the search types, which is definently expected. The average search time fot the A* manhattan was slightly higher than the misplaced tiles search which came as a suprise, but then I considered that this was again due to the invalid solutions being a factor in the averages.",,,,,,
+* The breadth first search (BFS) has a similar depth to the A* searches, but the node count is considerably higher which shows that the breadth first search is defiantly not memory friendly. 
+* The DFS has an extremely high depth due to the search expanding as far as possible before traversing down the next possible path. The node count is also high. This result could be different with other random puzzles. The average search time for depth first was slightly better than the average time for the breadth first search.
+* The A* misplaced tiles had a very similar depth to the BFS, which is expected. The average nodes were a good bit lower. This average would have been even lower if the invalid puzzles would not have been a factor. The average time was slightly faster, and again this is due to the invalid solutions being a factor in some of the searches.
+* The A* Manhattan distance had a slightly better average depth than the breadth first search and A* misplaced tiles search. The average nodes expanded was the least of all the search types, which is definitely expected. The average search time for the A* Manhattan was slightly higher than the misplaced tiles search which came as a surprise, but then I considered that this was again due to the invalid solutions being a factor in the averages.
+",,,,,,
 ,,,,,,
 ,,,,,,
 ,,,,,,
@@ -80,10 +81,22 @@ Average DFS,,,51035.6,130762,1.556707195,
 Avg A* Misplaced Tiles,,,23.2,27969.4,0.437628652,
 AvgA* Manhattan Distance,,,23.2,3295.2,0.06207284,
 "The Averages of these searches includes only valid puzzle solutions. The invalid solutions were not added into the calculations. 
-*The breadth first search A* misplaced and A* manhattan searches all have the same average depth which is expected. The node count for the depth first search is considerably higher than all of the other searches, which again is due to the stack data structure causeing the search to traverse all the way down one branch before moving to the next branch. 
-*The average node count for the breadth first seach shows that this types search is definently not memory friendly. Even though only valid solutions were factors in these averages, breadth first search still expanded A LOT of nodes to find the solution. This is due to the queue data structure. 
-*The average node count for the A* misplaced tiles is quite a bit lower than the node count for BFS or DFS. This is due to the heuristic being used in cooralation with the depth of each node. This value is used to add nodes to the priority queue. The lower the heuristic value, the better chance at finding a solution. The search time is considerably less and agian this is due to the heuristic being used.
-* The average node count for the A* manhattan distance is much, much lower than all of the other searches. This is completely because the A* manhattan searches finds the optimal solution with the depth of the node added to the heuristic value. The heuristic calculates how many positions the current tile is out of place and then addes that number to the total hueristc for that state. This total heuristic value for the state is then added with the depth to that point and this value is used to determine where the node should be placed in the priority queue. This ensures that the node with the lowest heuristic will be chosen every time. The search time for the A* manhattan distance is incredibly fast. The optimal solution is found faster, due to the heuristic being more precise than it was for the A* misplaced tiles. ",,,,,,
+*The breadth first search A* misplaced and A* Manhattan searches all have the same average depth which is expected. The node count for the depth first search is considerably higher than all the other searches, which again is due to the stack data structure causing the search to traverse all the way down one branch before moving to the next branch. 
+*The average node count for the breadth first search shows that this types search is definitely not memory friendly. Even though only valid solutions were factors in these averages, breadth first search still expanded A LOT of nodes to find the solution. This is due to the queue data structure. 
+*The average node count for the A* misplaced tiles is quite a bit lower than the node count for BFS or DFS. This is due to the heuristic being used in correlation with the depth of each node. This value is used to add nodes to the priority queue. The lower the heuristic value, the better chance at finding a solution. The search time is considerably less and again this is due to the heuristic being used.
+* The average node count for the A* Manhattan distance is much, much lower than all the other searches. This is completely because the A* Manhattan searches finds the optimal solution with the depth of the node added to the heuristic value. The heuristic calculates how many positions the current tile is out of place and then adds that number to the total heuristic for that state. This total heuristic value for the state is then added with the depth to that point and this value is used to determine where the node should be placed in the priority queue. This ensures that the node with the lowest heuristic will be chosen every time. The search time for the A* Manhattan distance is incredibly fast. The optimal solution is found faster, due to the heuristic being more precise than it was for the A* misplaced tiles. 
+
+
+
+
+
+
+
+
+
+
+
+",,,,,,
 ,,,,,,
 ,,,,,,
 ,,,,,,
