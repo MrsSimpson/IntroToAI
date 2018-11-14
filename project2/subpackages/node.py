@@ -54,7 +54,7 @@ class Node():
         for tile in range(9):
             if self.start_state[tile] != (tile + 1):
                 heuristic += 1
-
+        # The heuristic value is added to the depth to get an optimal A* search
         self.heuristic = self.depth + heuristic
         return self.heuristic
 
@@ -73,12 +73,12 @@ class Node():
                     out_of_place = abs(row - correct_row) + abs(column - correct_column)
                     heuristic += out_of_place
 
-
+        #The heuristic value is added to the depth to get an optimal A* search
         self.heuristic = self.depth + heuristic
         return self.heuristic
 
 def find_correct_position(value):
-    """finds the correct position of the current value"""
+    """finds the correct position of the current value (Where the value should be at)"""
     if value in (1, 2, 3):
         row = 0
         column = value - 1

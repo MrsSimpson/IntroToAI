@@ -13,7 +13,9 @@ def print_the_game(environment):
     print("|", environment[6], "|", environment[7], "|", environment[8], "|")
     print("-------------")
 
+
 def print_the_path(solution_path):
+    """Function prints the path of the solution in a formatted output to avoid each element being on a new line"""
     print("\nThe path to the solution is:")
     while solution_path:
         path1 = ""
@@ -122,6 +124,8 @@ def swap_empty_position(new_state, empty_spot, new_empty_spot):
 
 
 def write_to_file(node, data_structure, COUNTER, timer, search_type):
+    """function used to write to a csv file for the report that must be turned in. This function is not used when using
+    the program normally via user interface"""
     with open('report.csv', 'a', newline='') as file:
         line_write = csv.writer(file)
         line_write.writerow(['Search_type', 'Start State', 'Solution Found', 'Depth', 'Solution Path', 'Nodes Expanded', 'Search Time'])
