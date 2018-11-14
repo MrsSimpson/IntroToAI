@@ -43,7 +43,7 @@ def begin_depth_first_search(initial_node, visited_map, start_time):
             move_to_left(current_node, visited_map, stack)
 
         else:
-            print("The Solution was found: ")
+            print("The Solution using Depth First Search was found: ")
             print_the_game(current_node.start_state)
             print("It took", "%s seconds to find the solution" % (time.clock() - start_time))
             the_string = ""
