@@ -9,6 +9,7 @@ import csv
 
 
 COUNTER = 0
+MAX_DEPTH= 0
 
 def initialize_global_counter():
     """Set the global counter back to zero"""
@@ -19,6 +20,15 @@ def set_glob_counter():
     """increment the global counter"""
     global COUNTER
     COUNTER += 1
+
+def initialize_global_max_depth():
+    '''Initialize the max depth to 0'''
+    global MAX_DEPTH
+    MAX_DEPTH = 0
+
+def increment_max_depth(node_depth):
+    global MAX_DEPTH
+    MAX_DEPTH = node_depth
 
 
 def begin_depth_first_search(initial_node, visited_map, start_time):
@@ -32,6 +42,7 @@ def begin_depth_first_search(initial_node, visited_map, start_time):
 
     stack = []
     initialize_global_counter()
+    initialize_global_max_depth()
     stack.append(initial_node)
     current_node = initial_node
     while stack:  # while the queue still contains elements
@@ -57,6 +68,7 @@ def begin_depth_first_search(initial_node, visited_map, start_time):
     if not stack:
         print("Puzzle was not valid. No solution could be found.")
         print(COUNTER, "nodes were produced.")
+        print("The max depth searched was ", MAX_DEPTH)
         print("%s seconds to exhaust all possibilities" % (time.clock() - start_time))
 
 
@@ -81,6 +93,8 @@ def move_to_top(current_node, visited_map, stack):
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
         new_node.depth = new_node.set_depth(current_node)
+        if new_node.depth > MAX_DEPTH:
+            increment_max_depth(new_node.depth)
         stack.append(new_node)
 
 
@@ -99,6 +113,8 @@ def move_to_right(current_node, visited_map, stack):
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
         new_node.depth = new_node.set_depth(current_node)
+        if new_node.depth > MAX_DEPTH:
+            increment_max_depth(new_node.depth)
         stack.append(new_node)
 
 
@@ -117,6 +133,8 @@ def move_to_bottom(current_node, visited_map, stack):
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
         new_node.depth = new_node.set_depth(current_node)
+        if new_node.depth > MAX_DEPTH:
+            increment_max_depth(new_node.depth)
         stack.append(new_node)
 
 
@@ -135,4 +153,6 @@ def move_to_left(current_node, visited_map, stack):
         new_node = Node(new_state)
         new_node.empty_spot = new_node.find_empty_position()
         new_node.depth = new_node.set_depth(current_node)
+        if new_node.depth > MAX_DEPTH:
+            increment_max_depth(new_node.depth)
         stack.append(new_node)
